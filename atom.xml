@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https:shi747826.github.io/"/>
-  <updated>2020-01-25T10:01:31.256Z</updated>
+  <updated>2020-01-25T10:14:12.742Z</updated>
   <id>https:shi747826.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https:shi747826.github.io/2020/01/25/test/"/>
+    <id>https:shi747826.github.io/2020/01/25/test/</id>
+    <published>2020-01-25T10:12:41.525Z</published>
+    <updated>2020-01-25T10:14:12.742Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;123456&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="https:shi747826.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>新年快乐</title>
@@ -135,7 +160,7 @@
     <link href="https:shi747826.github.io/2019/11/18/Dijkstra/"/>
     <id>https:shi747826.github.io/2019/11/18/Dijkstra/</id>
     <published>2019-11-18T12:19:18.000Z</published>
-    <updated>2020-01-25T10:01:43.957Z</updated>
+    <updated>2020-01-25T10:08:26.862Z</updated>
     
     <summary type="html">
     

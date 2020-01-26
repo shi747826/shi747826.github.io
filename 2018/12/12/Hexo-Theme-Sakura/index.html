@@ -356,16 +356,14 @@ description: 站点简介
 keywords:
 author: 作者名
 language: zh-cn
-timezone:
-</code></pre>
+timezone:</code></pre>
 <p>部署</p>
 <pre><code class="yml">deploy:
   type: git
   repo: 
     github: 你的github仓库地址
     # coding: 你的coding仓库地址
-  branch: master
-</code></pre>
+  branch: master</code></pre>
 <p>备份 （使用hexo b发布备份到远程仓库）</p>
 <pre><code class="yml">backup:
   type: git
@@ -374,7 +372,6 @@ timezone:
     # 你的github仓库地址,备份分支名  （建议新建backup分支）
     github: https://github.com/honjun/honjun.github.io.git,backup
     # coding: https://git.coding.net/hojun/hojun.git,backup
-
 </code></pre>
 <h3 id="主题目录下的-config配置"><a href="#主题目录下的-config配置" class="headerlink" title="主题目录下的_config配置"></a>主题目录下的_config配置</h3><p>其中标明【改】的是需要修改部门，标明【选】是可改可不改，标明【非】是不用改的部分</p>
 <pre><code class="yml"># site name
@@ -497,8 +494,7 @@ aplayer:
 # Valine评论配置【改】
 valine: true
 v_appId: GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz
-v_appKey: mgOpfzbkHYqU92CV4IDlAUHQ
-</code></pre>
+v_appKey: mgOpfzbkHYqU92CV4IDlAUHQ</code></pre>
 <h2 id="分类页和标签页配置"><a href="#分类页和标签页配置" class="headerlink" title="分类页和标签页配置"></a>分类页和标签页配置</h2><h3 id="分类页"><a href="#分类页" class="headerlink" title="分类页"></a>分类页</h3><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b0gucy9j31060jih76.jpg" alt></p>
 <h3 id="标签页"><a href="#标签页" class="headerlink" title="标签页"></a>标签页</h3><p><img src="https://wx2.sinaimg.cn/large/006bYVyvly1g07azb2399j31040jgazs.jpg" alt></p>
 <p>配置项在\themes\Sakura\languages\zh-cn.yml里。新增一个分类或标签最好加下哦，当然嫌麻烦可以直接使用一张默认图片（可以改主题或者直接把404图片替换下，征求下意见要不要给这个在配置文件中加个开关，可以issue或群里提出来），现在是没设置的话会使用那种倒立小狗404哦。</p>
@@ -520,8 +516,7 @@ v_appKey: mgOpfzbkHYqU92CV4IDlAUHQ
 # 标签名即是标题
 悦读:
     # 封面图片
-    img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/reading.jpg
-</code></pre>
+    img: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/banner/reading.jpg</code></pre>
 <h2 id="单页面封面配置"><a href="#单页面封面配置" class="headerlink" title="单页面封面配置"></a>单页面封面配置</h2><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b1pi619j31080jge4u.jpg" alt><br>如留言板页面页面，位于source下的comment下，打开index.md如下：</p>
 <pre><code class="md">---
 title: comment
@@ -531,8 +526,7 @@ description:
 comments: true
 # 在这里配置单页面头部图片，自定义替换哦~
 photos: https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg
----
-</code></pre>
+---</code></pre>
 <h2 id="单页面配置"><a href="#单页面配置" class="headerlink" title="单页面配置"></a>单页面配置</h2><h3 id="番组计划页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"><a href="#番组计划页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）" class="headerlink" title="番组计划页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"></a>番组计划页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）</h3><p><img src="https://wx2.sinaimg.cn/large/006bYVyvly1g07b2gyx60j31090jjahj.jpg" alt></p>
 <pre><code class="yml">---
 layout: bangumi
@@ -563,8 +557,7 @@ bangumis:
     jp: さよならの朝に約束の花をかざろう
     time: 放送时间: 2018-02-24 SUN.
     desc: 住在远离尘嚣的土地，一边将每天的事情编织成名为希比欧的布，一边静静生活的伊欧夫人民。在15岁左右外表就停止成长，拥有数百年寿命的他们，被称为“离别的一族”，并被视为活着的传说。没有双亲的伊欧夫少女玛奇亚，过着被伙伴包围的平稳日子，却总感觉“孤身一人”。他们的这种日常，一瞬间就崩溃消失。追求伊欧夫的长寿之血，梅萨蒂军乘坐着名为雷纳特的古代兽发动了进攻。在绝望与混乱之中，伊欧夫的第一美女蕾莉亚被梅萨蒂带走，而玛奇亚暗恋的少年克里姆也失踪了。玛奇亚虽然总算逃脱了，却失去了伙伴和归去之地……。
----
-</code></pre>
+---</code></pre>
 <h3 id="友链页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"><a href="#友链页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）" class="headerlink" title="友链页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"></a>友链页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）</h3><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b39tleej31080jhjv1.jpg" alt></p>
 <pre><code class="yml">---
 layout: links
@@ -609,15 +602,12 @@ links:
       img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
       name: Google
       desc: Google 镜像
----
-</code></pre>
+---</code></pre>
 <h2 id="写文章配置"><a href="#写文章配置" class="headerlink" title="写文章配置"></a>写文章配置</h2><p>主题集成了个人插件hexo-tag-bili和hexo-tag-fancybox_img。其中hexo-tag-bili用来在文章或单页面中插入B站外链视频，使用语法如下：</p>
-<pre><code class="md">{% bili video_id [page] %}
-</code></pre>
+<pre><code class="md">{% bili video_id [page] %}</code></pre>
 <p>详细使用教程详见<a href="https://github.com/honjun/hexo-tag-bili/blob/master/README-zh_cn.md" target="_blank" rel="noopener">hexo-tag-bili</a>。</p>
 <p>hexo-tag-fancybox_img用来在文章或单页面中图片，使用语法如下：</p>
-<pre><code class="md">{% fb_img src [caption] %}
-</code></pre>
+<pre><code class="md">{% fb_img src [caption] %}</code></pre>
 <p>详细使用教程详见<a href="https://github.com/honjun/hexo-tag-fancybox_img/blob/master/README-zh_cn.md" target="_blank" rel="noopener">hexo-tag-fancybox_img</a></p>
 <h2 id="还有啥，一时想不起来……"><a href="#还有啥，一时想不起来……" class="headerlink" title="还有啥，一时想不起来……"></a>还有啥，一时想不起来……</h2><p>To be continued…</p>
 

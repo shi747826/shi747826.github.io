@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name"> Mamba out | SQRock</title>
+  <title itemprop="name">Codeforces Round #608 (Div. 2) B. Blocks | SQRock</title>
   
     <link rel="shortcut icon" href="/images/头像.jpg">
   
@@ -296,11 +296,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/shi747826/cdn@1.4.2/img/3.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.4.2/img/3.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3434.GIF);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3434.GIF">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-       Mamba out</h1>
+      Codeforces Round #608 (Div. 2) B. Blocks</h1>
       <p class="entry-census">
         <span>
           <a href="https://www.shi747826.com">
@@ -312,7 +312,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2020-1-27<span class="bull">
+        2020-1-28<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -326,8 +326,115 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>今天一早起来刷朋友圈突然看到科比不幸去世，第一反应就是假的，然后又看了B乎、微博才接受这个事实。感觉就像在做梦，2020开局就炸裂？？？科比今年才41岁，还没等到科比生儿子，这个世界怎么了？愿天堂也有亲爱的篮球，R.I.P。</p>
-<p>   <img src="/2020/01/27/Mamba-out/1.JPG" alt></p>
+          <h1 id="B-Blocks"><a href="#B-Blocks" class="headerlink" title="B. Blocks"></a><a href="http://codeforces.com/contest/1271/problem/B" target="_blank" rel="noopener"><strong>B. Blocks</strong></a></h1><p>There are <em>n</em> blocks arranged in a row and numbered from left to right, starting from one. Each block is either black or white.</p>
+<p>You may perform the following operation zero or more times: choose two <strong>adjacent</strong> blocks and invert their colors (white block becomes black, and vice versa).</p>
+<p>You want to find a sequence of operations, such that they make all the blocks having the same color. You <strong>don’t have</strong> to minimize the number of operations, but it should not exceed <strong>3 ⋅ n</strong>. If it is impossible to find such a sequence of operations, you need to report it.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h2><p>The first line contains one integer <em>n (2 ≤ n ≤ 200)</em> — the number of blocks.</p>
+<p>The second line contains one string s consisting of n characters, each character is either “W” or “B”. If the <em>i-th</em> character is “W”, then the <em>i-th</em> block is white. If the <em>i-th</em> character is “B”, then the <em>i-th</em> block is black.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h2><p>If it is impossible to make all the blocks having the same color, print <strong>−1</strong>.</p>
+<p>Otherwise, print an integer k (0 ≤ k ≤ 3⋅n) — the number of operations. Then print k integers p1,p2,…,pk (1≤pj≤n−1), where <strong>pj</strong> is the position of the left block in the pair of blocks that should be affected by the <em>j-th</em> operation.</p>
+<p>If there are multiple answers, print any of them.</p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a><strong>Examples</strong></h2><p><strong>input</strong></p>
+<pre><code>8
+BWWWWWWB</code></pre><p><strong>output</strong></p>
+<pre><code>3
+6 2 4</code></pre><p><strong>input</strong></p>
+<pre><code>4
+BWBB</code></pre><p><strong>output</strong></p>
+<pre><code>-1</code></pre><p><strong>input</strong></p>
+<pre><code>5
+WWWWW</code></pre><p><strong>output</strong></p>
+<pre><code>0</code></pre><p><strong>input</strong></p>
+<pre><code>3
+BWB</code></pre><p><strong>output</strong></p>
+<pre><code>2
+2 1 </code></pre><h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a><strong>Note</strong></h2><p>In the first example, it is possible to make all blocks black in <strong>3</strong> operations. Start with changing blocks <strong>6</strong> and <strong>7</strong>, so the sequence is “<code>BWWWWBBB</code>“. Then change blocks <strong>2</strong> and <strong>3</strong>, so the sequence is “<code>BBBWWBB</code>“. And finally, change blocks <strong>4</strong> and <strong>5</strong>, so all blocks are black.</p>
+<p>It is impossible to make all colors equal in the second example.</p>
+<p>All blocks are already white in the third example.</p>
+<p>In the fourth example it is possible to make all blocks white in two operations: first operation is to change blocks <strong>2</strong> and <strong>3</strong> (so the sequence is “<code>BBW</code>“), and then change blocks <strong>1</strong> and <strong>2</strong> (so all blocks are white).</p>
+<h1 id="Problem-solving"><a href="#Problem-solving" class="headerlink" title="Problem solving:"></a>Problem solving:</h1><p>这是一道div.2的B题，属于偏容易的题目。意思就是给你一串字符串，让你修改连续的两个字符的颜色，看最终是否能够把整个字符串变成完全一样的颜色（全白：W 或者全黑： B），比赛时被卡住了没地方下手，现在再看数据范围一点也不大，完全可以暴力，只需要check这个字符串能不能变成全白和全黑。for两次就可以了。</p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+#define fi        first
+#define se        second
+#define PI        acos(-1)
+#define LC(a)     ((a&lt;&lt;1))
+#define RC(a)     ((a&lt;&lt;1)+1)
+#define MID(a,b)  ((a+b)&gt;&gt;1)
+#define mem(a, b) memset(a, b, sizeof(a))
+#define IOS()     std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)
+using namespace std;
+typedef long long ll;
+typedef unsigned long long ULL;
+typedef pair&lt;int,int&gt; PII;
+typedef pair&lt;ll,ll&gt;   PLL;
+typedef pair&lt;ll,int&gt;  PLI;
+const int INF = 0X3F3F3F3F;
+const int MIN = -(1&lt;&lt;30);
+const ll N = 1e5+7;
+int n;
+string ss;
+vector&lt;int&gt; v,vv;
+int check(char ch)
+{
+    string s = ss;
+
+    for(int i=0; i&lt;s.size(); i++)
+    {
+        if(s[i]!=ch)
+        {
+            if(i+1==s.size()) return 0;
+            ch==&#39;W&#39;?v.push_back(i):vv.push_back(i);
+            s[i]=ch;
+            s[i+1]=s[i+1]==&#39;W&#39;?&#39;B&#39;:&#39;W&#39;;
+            //    cout&lt;&lt;s&lt;&lt;endl;
+        }
+    }
+//    cout&lt;&lt;s.size()&lt;&lt;endl;
+//    for(auto it:v)
+//        cout&lt;&lt;it+1&lt;&lt;&quot; &quot;;
+//    cout&lt;&lt;endl;
+    return 1;
+}
+int main()
+{
+    IOS();
+    cin&gt;&gt;n&gt;&gt;ss;
+    int flag1 = check(&#39;W&#39;);
+    int flag2 = check(&#39;B&#39;);
+    if(flag1 &amp;&amp; flag2)
+    {
+        if(v.size()&lt;vv.size())
+        {
+            cout&lt;&lt;v.size()&lt;&lt;endl;
+            for(auto it:v)
+                cout&lt;&lt;it+1&lt;&lt;&quot; &quot;;
+            cout&lt;&lt;endl;
+        }
+        else
+        {
+            cout&lt;&lt;vv.size()&lt;&lt;endl;
+            for(auto it:vv)
+                cout&lt;&lt;it+1&lt;&lt;&quot; &quot;;
+            cout&lt;&lt;endl;
+        }
+    }
+    else if(flag1)
+    {
+        cout&lt;&lt;v.size()&lt;&lt;endl;
+        for(auto it:v)
+            cout&lt;&lt;it+1&lt;&lt;&quot; &quot;;
+        cout&lt;&lt;endl;
+    }
+    else if(flag2)
+    {
+        cout&lt;&lt;vv.size()&lt;&lt;endl;
+        for(auto it:vv)
+            cout&lt;&lt;it+1&lt;&lt;&quot; &quot;;
+        cout&lt;&lt;endl;
+    }
+    else cout&lt;&lt;&quot;-1&quot;&lt;&lt;endl;
+    return 0;
+}</code></pre>
 
         </div>
         <!-- .entry-content -->
@@ -356,36 +463,19 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2020/01/28/Codeforces-Round-608-Div-2-B-Blocks/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3434.GIF" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3434.GIF">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                Codeforces Round #608 (Div. 2) B. Blocks</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
         
           
-            <div class="post-nepre half next">
+            <div class="post-nepre full next">
           
-            <a href="/2020/01/26/我想被困在学校/" rel="next">
+            <a href="/2020/01/27/Mamba-out/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3433.GIF" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3433.GIF">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.4.2/img/3.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.4.2/img/3.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                我想被困在学校</h3>
+                 Mamba out</h3>
                 <hr>
               </div>
             </a>

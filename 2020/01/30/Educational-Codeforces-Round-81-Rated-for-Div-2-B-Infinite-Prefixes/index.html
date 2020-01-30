@@ -349,43 +349,13 @@
 <h1 id="Problem-solving"><a href="#Problem-solving" class="headerlink" title="Problem solving:"></a>Problem solving:</h1><p>这场cf全是字符串，直接自闭。</p>
 <p><img src="/2020/01/30/Educational-Codeforces-Round-81-Rated-for-Div-2-B-Infinite-Prefixes/1.jpg" alt></p>
 <p>题目意思是给你一个<code>01</code>字符串，然后这个字符串可以无限叠加。例如<code>010010</code>可以变成<code>010010 010010</code>、<code>010010 010010 010010 010010 010010</code>（串中没有空格） … 。然后找这个无限字符串的前缀，前缀0的个数减去1的个数等于<strong><em>x</em></strong>。问有多少种符合的前缀。</p>
-<p>因为<strong><em>x</em></strong>有正负之分，需要判断的太多了，然后就把自己绕进去了。看了别人的代码后才知道可以先把负数的<strong><em>x</em></strong>变成正数，然后把原串01对换，这样就只需要判断正数的<strong><em>x</em></strong>了。</p>
+<p>因为<strong><em>x</em></strong>有正负之分，需要判断的太多了，然后就把自己绕进去了。看了别人的代码后才知道可以先把负数的 <strong><em>x</em></strong> 变成正数，然后把原串01对换，这样就只需要判断正数的<strong><em>x</em></strong>了。</p>
 <p>把原串  <strong><em>cnt<sub>0,q</sub></em></strong> −  <strong><em>cnt<sub>1,q</sub></em></strong>  记为  <strong><em>num</em></strong>。</p>
-<p>因为串是无穷的，所以会出现有无穷多个解的情况。当原串 <strong><em>num</em></strong>  等于 <strong><em>0</em></strong> ，原串前缀的<strong><em>cnt<sub>0,q</sub></em></strong> −  <strong><em>cnt<sub>1,q</sub></em></strong>等于<strong><em>x</em></strong>时，答案就有无穷多个。输出 <strong><em>-1</em></strong></p>
+<p>因为串是无穷的，所以会出现有无穷多个解的情况。当原串 <strong><em>num</em></strong>  等于 <strong><em>0</em></strong> ，原串前缀的<strong><em>cnt<sub>0,q</sub></em></strong> −  <strong><em>cnt<sub>1,q</sub></em></strong>等于<strong><em>x</em></strong> 时，答案就有无穷多个。输出 <strong><em>-1</em></strong></p>
 <p>当  <strong><em>num</em></strong>  不为 <strong><em>0</em></strong> 时</p>
 <p>我用一个数组<strong><em>a</em></strong>记录原串中前缀当前位置的 <strong><em>cnt<sub>0,i</sub></em></strong> −  <strong><em>cnt<sub>1,i</sub></em></strong>  ,如下表所示：</p>
 <p><strong><em>s =</em></strong> <code>010010</code> , <strong><em>x = 10</em></strong></p>
-<table>
-<thead>
-<tr>
-<th>S    （num = 2）</th>
-<th>0</th>
-<th>1</th>
-<th>0</th>
-<th>0</th>
-<th>1</th>
-<th>0</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>a</strong>   (<strong><em>cnt<sub>0,q</sub></em></strong> −  <strong><em>cnt<sub>1,q</sub></em></strong>)</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
-<td>2</td>
-</tr>
-<tr>
-<td><strong><em>下标</em></strong>（ <strong><em>i</em></strong> ）</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-</tr>
-</tbody></table>
+<p><img src="/2020/01/30/Educational-Codeforces-Round-81-Rated-for-Div-2-B-Infinite-Prefixes/2.jpg" alt></p>
 <p>然后遍历这个数组，当 <strong><em>( x - a[i] ) % num == 0 &amp;&amp; ( x - a[i] ) / num &gt;= 0 ）</em></strong> 时 答案<strong><em>ans</em></strong>就<strong><em>+1</em></strong>；</p>
 <p>如表中 下标为<strong>2</strong>时 ，a[1] = 0，<strong><em>( x - a[i] ) % num == 0</em></strong>；  <strong><em>( x - a[i] ) / num = 5</em></strong> 。说明前缀包含了五个原串中，再加上第六个原串的前两个就可以满足   <strong><em>cnt<sub>0,q</sub></em></strong> −  <strong><em>cnt<sub>1,q</sub>  =  10</em></strong>   当前位置为 <strong>5 * 6 + 2</strong> 即 <strong>32</strong>。</p>
 <p>当下标为<strong>4</strong>时， <strong><em>( x - a[i] ) / num = 4</em></strong> ，我们可以得到在位置 <strong>4 * 6 + 4</strong>  即 <strong>28</strong> 处找到解。</p>

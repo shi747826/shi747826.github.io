@@ -343,14 +343,11 @@
 <p>这道题可以从大到小贪心选择数组A中的数，查找数组B中有多少个数是大于等于A<sub>i</sub>的。</p>
 <p>例如样例中的数据，</p>
 <ul>
-<li><input disabled type="checkbox"> <p>A从3开始，B中有2个值大于等于3，说明3有<code>2</code>个位置可以选择。</p>
-</li>
-<li><input disabled type="checkbox"> <p>然后查找2，B中有3个值大于等于2，说明2有3个位置可以选择。但是上一步已经占了一个位置，所以需要减掉1，也就是有<code>2</code>个位置可以选择</p>
-</li>
-<li><input disabled type="checkbox"> <p>接着查找第一个1，B中4个值大于等于1，减掉前两个数占的位置，第一个1只有<code>2</code>个位置可以选择</p>
-</li>
-<li><input disabled type="checkbox"> <p>最后查找第二个1，B中4个值大于等于1，减掉前三个数占的位置，第二个1只剩<code>1</code>个位置可以选择</p>
-</li>
+<li><input disabled type="checkbox"> A从3开始，B中有2个值大于等于3，说明3有<code>2</code>个位置可以选择。</li>
+<li><input disabled type="checkbox"> 然后查找2，B中有3个值大于等于2，说明2有3个位置可以选择。但是上一步已经占了一个位置，所以需要减掉1，也就是有<code>2</code>个位置可以选择</li>
+<li><input disabled type="checkbox"> 接着查找第一个1，B中4个值大于等于1，减掉前两个数占的位置，第一个1只有<code>2</code>个位置可以选择</li>
+<li><input disabled type="checkbox"> 最后查找第二个1，B中4个值大于等于1，减掉前三个数占的位置，第二个1只剩<code>1</code>个位置可以选择</li>
+<li><input disabled type="checkbox"> 最后 2 * 2 * 2 * 1 就是要求的结果了</li>
 </ul>
 <p>因为需要查找数组B，可以将数组B排序后用二分来查找。</p>
 <pre><code class="c++">#include&lt;bits/stdc++.h&gt;

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https:shi747826.github.io/"/>
-  <updated>2020-02-12T09:26:55.407Z</updated>
+  <updated>2020-02-15T10:09:01.355Z</updated>
   <id>https:shi747826.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020牛客寒假算法基础集训营6 D-重排列</title>
+    <link href="https:shi747826.github.io/2020/02/15/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A56-D-%E9%87%8D%E6%8E%92%E5%88%97/"/>
+    <id>https:shi747826.github.io/2020/02/15/2020牛客寒假算法基础集训营6-D-重排列/</id>
+    <published>2020-02-15T09:35:07.000Z</published>
+    <updated>2020-02-15T10:09:01.355Z</updated>
+    
+    <summary type="html">
+    
+      运算符优先级搞死我了
+    
+    </summary>
+    
+      <category term="算法" scheme="https:shi747826.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="二分" scheme="https:shi747826.github.io/tags/%E4%BA%8C%E5%88%86/"/>
+    
+      <category term="贪心" scheme="https:shi747826.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+  </entry>
   
   <entry>
     <title>2020牛客寒假算法基础集训营4 C-子段乘积</title>

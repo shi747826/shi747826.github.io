@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https:shi747826.github.io/"/>
-  <updated>2020-02-15T10:11:37.594Z</updated>
+  <updated>2020-02-17T04:52:00.234Z</updated>
   <id>https:shi747826.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库作业1</title>
+    <link href="https:shi747826.github.io/2020/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%9C%E4%B8%9A1/"/>
+    <id>https:shi747826.github.io/2020/02/17/数据库作业1/</id>
+    <published>2020-02-17T04:36:13.000Z</published>
+    <updated>2020-02-17T04:52:00.234Z</updated>
+    
+    <summary type="html">
+    
+      网课的第一天，作业写电子版，舒服。
+    
+    </summary>
+    
+      <category term="笔记" scheme="https:shi747826.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据库" scheme="https:shi747826.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="作业" scheme="https:shi747826.github.io/tags/%E4%BD%9C%E4%B8%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>2020牛客寒假算法基础集训营6 D-重排列</title>

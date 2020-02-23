@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https:shi747826.github.io/"/>
-  <updated>2020-02-17T04:52:00.234Z</updated>
+  <updated>2020-02-23T14:50:35.856Z</updated>
   <id>https:shi747826.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Codeforces Round #622 (Div. 2)</title>
+    <link href="https:shi747826.github.io/2020/02/23/Codeforces-Round-622-Div-2/"/>
+    <id>https:shi747826.github.io/2020/02/23/Codeforces-Round-622-Div-2/</id>
+    <published>2020-02-23T13:02:15.000Z</published>
+    <updated>2020-02-23T14:50:35.856Z</updated>
+    
+    <summary type="html">
+    
+      乱搞上一大波分， i了。
+    
+    </summary>
+    
+      <category term="算法" scheme="https:shi747826.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="codeforces" scheme="https:shi747826.github.io/tags/codeforces/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库作业1</title>

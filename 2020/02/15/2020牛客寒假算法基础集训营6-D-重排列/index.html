@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
   <title itemprop="name">2020牛客寒假算法基础集训营6 D-重排列 | SQRock</title>
@@ -58,11 +58,11 @@
   .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
-  </style>
+  </style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 </html>
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
-  <div class="scrollbar" id="bar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="scrollbar" id="bar">
   </div>
   <a href="#" class="cd-top faa-float animated"></a>
   <section id="main-container">
@@ -339,18 +339,20 @@
 <h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h2><p>一行一个整数，表示答案</p>
 <h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>4
 1 1 2 3
-1 2 3 4</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>8</code></pre><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>题意就是说数组A所以重排列中，有多少个满足所以的 i (1 ≤ i ≤ N)，有A<sub>i</sub> ≤ B<sub>i</sub>  。</p>
+1 2 3 4
+</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>8
+</code></pre><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>题意就是说数组A所以重排列中，有多少个满足所以的 i (1 ≤ i ≤ N)，有A<sub>i</sub> ≤ B<sub>i</sub>  。</p>
 <p>这道题可以从大到小贪心选择数组A中的数，查找数组B中有多少个数是大于等于A<sub>i</sub>的。</p>
 <p>例如样例中的数据，</p>
 <ul>
-<li><input disabled type="checkbox"> A从3开始，B中有2个值大于等于3，说明3有<code>2</code>个位置可以选择。</li>
-<li><input disabled type="checkbox"> 然后查找2，B中有3个值大于等于2，说明2有3个位置可以选择。但是上一步已经占了一个位置，所以需要减掉1，也就是有<code>2</code>个位置可以选择</li>
-<li><input disabled type="checkbox"> 接着查找第一个1，B中4个值大于等于1，减掉前两个数占的位置，第一个1只有<code>2</code>个位置可以选择</li>
-<li><input disabled type="checkbox"> 最后查找第二个1，B中4个值大于等于1，减掉前三个数占的位置，第二个1只剩<code>1</code>个位置可以选择</li>
-<li><input disabled type="checkbox"> 最后 2 * 2 * 2 * 1 就是要求的结果了</li>
+<li>[ ] A从3开始，B中有2个值大于等于3，说明3有<code>2</code>个位置可以选择。</li>
+<li>[ ] 然后查找2，B中有3个值大于等于2，说明2有3个位置可以选择。但是上一步已经占了一个位置，所以需要减掉1，也就是有<code>2</code>个位置可以选择</li>
+<li>[ ] 接着查找第一个1，B中4个值大于等于1，减掉前两个数占的位置，第一个1只有<code>2</code>个位置可以选择</li>
+<li>[ ] 最后查找第二个1，B中4个值大于等于1，减掉前三个数占的位置，第二个1只剩<code>1</code>个位置可以选择</li>
+<li>[ ] 最后 2 <em> 2 </em> 2 * 1 就是要求的结果了</li>
 </ul>
 <p>因为需要查找数组B，可以将数组B排序后用二分来查找。</p>
-<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+<pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
 using namespace std;
 typedef long long ll;
 const ll N = 1e5+7;
@@ -379,7 +381,8 @@ int main()
     }
     cout&lt;&lt;ans%mod&lt;&lt;endl;
     return 0;
-}</code></pre>
+}
+</code></pre>
 <p>自己二分写的不熟，比赛中一直wa，搞不懂哪里错了，最后用了STL里的二分函数，还是wa。</p>
 <p>然后无意的把<code>ans*=(k-i&gt;0?k-i:0)%mod</code>  改成了 <code>ans=ans*(k-i&gt;0?k-i:0)%mod</code> 一下就AC了，运算符优先级的问题，百度了一下看到 <code>*=</code>的优先级要比 <code>%</code> 优先级小得多，下次不会再偷懒了。</p>
 
@@ -806,6 +809,23 @@ $(document).ready(function() {
       }
     })
   });
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
 </script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>

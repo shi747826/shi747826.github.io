@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
   <title itemprop="name">Codeforces Round #608 (Div. 2) B. Blocks | SQRock</title>
@@ -58,11 +58,11 @@
   .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
-  </style>
+  </style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 </html>
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
-  <div class="scrollbar" id="bar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="scrollbar" id="bar">
   </div>
   <a href="#" class="cd-top faa-float animated"></a>
   <section id="main-container">
@@ -336,24 +336,32 @@
 <p>If there are multiple answers, print any of them.</p>
 <h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a><strong>Examples</strong></h2><p><strong>input</strong></p>
 <pre><code>8
-BWWWWWWB</code></pre><p><strong>output</strong></p>
+BWWWWWWB
+</code></pre><p><strong>output</strong></p>
 <pre><code>3
-6 2 4</code></pre><p><strong>input</strong></p>
+6 2 4
+</code></pre><p><strong>input</strong></p>
 <pre><code>4
-BWBB</code></pre><p><strong>output</strong></p>
-<pre><code>-1</code></pre><p><strong>input</strong></p>
+BWBB
+</code></pre><p><strong>output</strong></p>
+<pre><code>-1
+</code></pre><p><strong>input</strong></p>
 <pre><code>5
-WWWWW</code></pre><p><strong>output</strong></p>
-<pre><code>0</code></pre><p><strong>input</strong></p>
+WWWWW
+</code></pre><p><strong>output</strong></p>
+<pre><code>0
+</code></pre><p><strong>input</strong></p>
 <pre><code>3
-BWB</code></pre><p><strong>output</strong></p>
+BWB
+</code></pre><p><strong>output</strong></p>
 <pre><code>2
-2 1 </code></pre><h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a><strong>Note</strong></h2><p>In the first example, it is possible to make all blocks black in <strong>3</strong> operations. Start with changing blocks <strong>6</strong> and <strong>7</strong>, so the sequence is “<code>BWWWWBBB</code>“. Then change blocks <strong>2</strong> and <strong>3</strong>, so the sequence is “<code>BBBWWBB</code>“. And finally, change blocks <strong>4</strong> and <strong>5</strong>, so all blocks are black.</p>
+2 1
+</code></pre><h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a><strong>Note</strong></h2><p>In the first example, it is possible to make all blocks black in <strong>3</strong> operations. Start with changing blocks <strong>6</strong> and <strong>7</strong>, so the sequence is “<code>BWWWWBBB</code>“. Then change blocks <strong>2</strong> and <strong>3</strong>, so the sequence is “<code>BBBWWBB</code>“. And finally, change blocks <strong>4</strong> and <strong>5</strong>, so all blocks are black.</p>
 <p>It is impossible to make all colors equal in the second example.</p>
 <p>All blocks are already white in the third example.</p>
 <p>In the fourth example it is possible to make all blocks white in two operations: first operation is to change blocks <strong>2</strong> and <strong>3</strong> (so the sequence is “<code>BBW</code>“), and then change blocks <strong>1</strong> and <strong>2</strong> (so all blocks are white).</p>
 <h1 id="Problem-solving"><a href="#Problem-solving" class="headerlink" title="Problem solving:"></a>Problem solving:</h1><p>这是一道div.2的B题，属于偏容易的题目。意思就是给你一串字符串，让你修改连续的两个字符的颜色，看最终是否能够把整个字符串变成完全一样的颜色（全白：W 或者全黑： B），比赛时被卡住了没地方下手，现在再看数据范围一点也不大，完全可以暴力，只需要check这个字符串能不能变成全白和全黑。for两次就可以了。</p>
-<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+<pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
 #define fi        first
 #define se        second
 #define PI        acos(-1)
@@ -434,7 +442,8 @@ int main()
     }
     else cout&lt;&lt;&quot;-1&quot;&lt;&lt;endl;
     return 0;
-}</code></pre>
+}
+</code></pre>
 
         </div>
         <!-- .entry-content -->
@@ -859,6 +868,23 @@ $(document).ready(function() {
       }
     })
   });
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
 </script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>

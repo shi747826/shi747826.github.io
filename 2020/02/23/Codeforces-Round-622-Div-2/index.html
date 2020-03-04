@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
   <title itemprop="name">Codeforces Round #622 (Div. 2) | SQRock</title>
@@ -58,11 +58,11 @@
   .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
-  </style>
+  </style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 </html>
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
-  <div class="scrollbar" id="bar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="scrollbar" id="bar">
   </div>
   <a href="#" class="cd-top faa-float animated"></a>
   <section id="main-container">
@@ -345,20 +345,22 @@
 2 2 3
 2 3 2
 3 2 2
-4 4 4</code></pre><h3 id="output"><a href="#output" class="headerlink" title="output"></a><strong>output</strong></h3><pre><code>3
+4 4 4
+</code></pre><h3 id="output"><a href="#output" class="headerlink" title="output"></a><strong>output</strong></h3><pre><code>3
 0
 4
 5
 5
 5
-7</code></pre><h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a><strong>Note</strong></h2><p>In the first test case of the example, Denis can feed the first visitor with dumplings, give the second a portion of cranberry juice, and give the third visitor a portion of cranberry juice and a pancake with a condensed milk.</p>
+7
+</code></pre><h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a><strong>Note</strong></h2><p>In the first test case of the example, Denis can feed the first visitor with dumplings, give the second a portion of cranberry juice, and give the third visitor a portion of cranberry juice and a pancake with a condensed milk.</p>
 <p>In the second test case of the example, the restaurant Denis is not very promising: he can serve no customers.</p>
 <p>In the third test case of the example, Denise can serve four visitors. The first guest will receive a full lunch of dumplings, a portion of cranberry juice and a pancake with condensed milk. The second visitor will get only dumplings. The third guest will receive a pancake with condensed milk, and the fourth guest will receive a pancake and a portion of dumplings. Please note that Denis hasn’t used all of the prepared products, but is unable to serve more visitors.</p>
 <h2 id="Problem-solving"><a href="#Problem-solving" class="headerlink" title="Problem solving:"></a>Problem solving:</h2><p>题意就是有三种不同的食物，给出三种食物的数量，问有多少种食物搭配的方案（可以用1种、2种或3种食物进行搭配，只要没出现过就可以）。</p>
 <p>很明显先从只选1种食物开始，如果当前数量大于1，方案数就加一。</p>
 <p>然后从2种食物开始搭配，优先贪心选择剩余数量最多的两种，然后再<del>乱搞</del>（两两选择）。</p>
 <p>最后如果3种食物数量都大于1，就可以再加一种方案（选择三种食物）。</p>
-<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+<pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
 using namespace std;
 const ll N = 1e5+7;
 int main()
@@ -390,7 +392,8 @@ int main()
      } 
 
     return 0;
-}</code></pre>
+}
+</code></pre>
 <h1 id="B-Different-Rules"><a href="#B-Different-Rules" class="headerlink" title="B. Different Rules"></a><a href="https://codeforces.ml/contest/1313/problem/B" target="_blank" rel="noopener">B. Different Rules</a></h1><p>Nikolay has only recently started in competitive programming, but already qualified to the finals of one prestigious Olympiad. There going to be <strong>n</strong> participants, one of whom is Nikolay. Like any good Olympiad, it consists of two rounds. Tired of the traditional rules, in which the participant who solved the largest number of problems wins, the organizers came up with different rules.</p>
 <p>Suppose in the first round participant A took <em>x</em>-th place and in the second round — <em>y</em>-th place. Then the total score of the participant A is sum <strong>x</strong> + <strong>y</strong>. The overall place of the participant A is the number of participants (including A) having their total score less than or equal to the total score of A. Note, that some participants may end up having a common overall place. It is also important to note, that in both the first and the second round there were no two participants tying at a common place. In other words, for every <em>i</em> from <em>1</em> to <em>n</em> <strong>exactly one</strong> participant took <em>i</em>-th place in first round and <strong>exactly one</strong> participant took <em>i</em>-th place in second round.</p>
 <p>Right after the end of the Olympiad, Nikolay was informed that he got <em>x</em>-th place in first round and <em>y</em>-th place in the second round. Nikolay doesn’t know the results of other participants, yet he wonders what is the minimum and maximum place he can take, if we consider the most favorable and unfavorable outcome for him. Please help Nikolay to find the answer to this question.</p>
@@ -398,12 +401,16 @@ int main()
 <p>Each of the following <strong>t</strong> lines contains integers <strong>n</strong>, <strong>x</strong>, <strong>y</strong> (1 ≤ n ≤ 10<sup>9</sup>, 1 ≤ x, y ≤ n) — the number of participants in the Olympiad, the place that Nikolay took in the first round and the place that Nikolay took in the second round.</p>
 <h2 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a><strong>Output</strong></h2><p>Print two integers — the minimum and maximum possible overall place Nikolay could take.</p>
 <h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a><strong>Examples</strong></h2><h3 id="input-1"><a href="#input-1" class="headerlink" title="input"></a><strong>input</strong></h3><pre><code>1
-5 1 3</code></pre><h3 id="output-1"><a href="#output-1" class="headerlink" title="output"></a><strong>output</strong></h3><pre><code>1 3</code></pre><h3 id="input-2"><a href="#input-2" class="headerlink" title="input"></a><strong>input</strong></h3><pre><code>1
-6 3 4</code></pre><h3 id="output-2"><a href="#output-2" class="headerlink" title="output"></a><strong>output</strong></h3><pre><code>2 6</code></pre><h2 id="Problem-solving-1"><a href="#Problem-solving-1" class="headerlink" title="Problem solving:"></a>Problem solving:</h2><p>题意是说一共有n个人，有两轮比赛，你第一轮得了第a名。第二轮得了第b名。最后的总名次是按照这两次比赛和名次和来判断的，两轮的名次和越少总名次越高，问已知n,a,b的情况下，最好、最坏能得多少名。</p>
+5 1 3
+</code></pre><h3 id="output-1"><a href="#output-1" class="headerlink" title="output"></a><strong>output</strong></h3><pre><code>1 3
+</code></pre><h3 id="input-2"><a href="#input-2" class="headerlink" title="input"></a><strong>input</strong></h3><pre><code>1
+6 3 4
+</code></pre><h3 id="output-2"><a href="#output-2" class="headerlink" title="output"></a><strong>output</strong></h3><pre><code>2 6
+</code></pre><h2 id="Problem-solving-1"><a href="#Problem-solving-1" class="headerlink" title="Problem solving:"></a>Problem solving:</h2><p>题意是说一共有n个人，有两轮比赛，你第一轮得了第a名。第二轮得了第b名。最后的总名次是按照这两次比赛和名次和来判断的，两轮的名次和越少总名次越高，问已知n,a,b的情况下，最好、最坏能得多少名。</p>
 <p>注意两轮比赛中没有两人名次相同的情况，总名次会有相同的情况，例如5个人名次和分别是 4，4，4，8，10，那么这五个人的总名次就是3, 3, 3, 4, 5。</p>
 <p>最坏情况就是总名次在你<del>前面</del>的人两轮的名次和都和你相同，这样最多会有a+b-1人（包括自己），而最多只有n人所以最坏情况就是min(n,a+b-1);</p>
 <p>至于最好情况，<del>感觉</del>（乱搞）出来的</p>
-<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+<pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
 using namespace std;
 int main()
 {
@@ -421,7 +428,8 @@ int main()
         cout&lt;&lt;min(n,sum-1)&lt;&lt;endl; 
     }    
     return 0;
-}</code></pre>
+}
+</code></pre>
 <h1 id="C1-Skyscrapers-easy-version"><a href="#C1-Skyscrapers-easy-version" class="headerlink" title="C1. Skyscrapers (easy version)"></a><a href="https://codeforces.ml/contest/1313/problem/C1" target="_blank" rel="noopener">C1. Skyscrapers (easy version)</a></h1><p><em>This is an easier version of the problem. In this version n ≤ 1000</em></p>
 <p>The outskirts of the capital are being actively built up in Berland. The company “Kernel Panic” manages the construction of a residential complex of skyscrapers in New Berlskva. All skyscrapers are built along the highway. It is known that the company has already bought n plots along the highway and is preparing to build n skyscrapers, one skyscraper per plot.</p>
 <p>Architects must consider several requirements when planning a skyscraper. Firstly, since the land on each plot has different properties, each skyscraper has a limit on the largest number of floors it can have. Secondly, according to the design code of the city, it is unacceptable for a skyscraper to simultaneously have higher skyscrapers both to the left and to the right of it.</p>
@@ -432,13 +440,17 @@ int main()
 <h2 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a><strong>Output</strong></h2><p>Print n integers a<sub>i</sub> — the number of floors in the plan for each skyscraper, such that all requirements are met, and the total number of floors in all skyscrapers is the maximum possible.</p>
 <p>If there are multiple answers possible, print any of them.</p>
 <h2 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples"></a><strong>Examples</strong></h2><h3 id="input-3"><a href="#input-3" class="headerlink" title="input"></a><strong>input</strong></h3><pre><code>5
-1 2 3 2 1</code></pre><h3 id="output-3"><a href="#output-3" class="headerlink" title="output"></a><strong>output</strong></h3><pre><code>1 2 3 2 1 </code></pre><h3 id="input-4"><a href="#input-4" class="headerlink" title="input"></a><strong>input</strong></h3><pre><code>3
-10 6 8</code></pre><h3 id="output-4"><a href="#output-4" class="headerlink" title="output"></a><strong>output</strong></h3><pre><code>10 6 6 </code></pre><h2 id="Note-1"><a href="#Note-1" class="headerlink" title="Note"></a><strong>Note</strong></h2><p>In the first example, you can build all skyscrapers with the highest possible height.</p>
+1 2 3 2 1
+</code></pre><h3 id="output-3"><a href="#output-3" class="headerlink" title="output"></a><strong>output</strong></h3><pre><code>1 2 3 2 1
+</code></pre><h3 id="input-4"><a href="#input-4" class="headerlink" title="input"></a><strong>input</strong></h3><pre><code>3
+10 6 8
+</code></pre><h3 id="output-4"><a href="#output-4" class="headerlink" title="output"></a><strong>output</strong></h3><pre><code>10 6 6
+</code></pre><h2 id="Note-1"><a href="#Note-1" class="headerlink" title="Note"></a><strong>Note</strong></h2><p>In the first example, you can build all skyscrapers with the highest possible height.</p>
 <p>In the second test example, you cannot give the maximum height to all skyscrapers as this violates the design code restriction. The answer <code>[10,6,6]</code> is optimal. Note that the answer of <code>[6,6,8]</code> also satisfies all restrictions, but is not optimal.</p>
 <h2 id="Problem-solving-2"><a href="#Problem-solving-2" class="headerlink" title="Problem solving:"></a>Problem solving:</h2><p>题意是说给你一个序列，让你修改成 j &lt; i &lt; k 情况下没有 a<sub><em>j</em></sub> &gt; a<sub><em>i</em></sub> &lt; a<sub><em>k</em></sub> 的序列，要求修改后的序列和最大。修改时每个数不能超过原来的大小。</p>
 <p>这道题因为是easy版本的 ，数据范围比较小，一般情况下就可以用暴力。</p>
 <p>我们只需要暴力检查每个点，把当前点当做最大的，依次往两边扫就可以了。</p>
-<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+<pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
 #define fi        first
 #define se        second
 #define PI        acos(-1)
@@ -922,6 +934,23 @@ $(document).ready(function() {
       }
     })
   });
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
 </script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>

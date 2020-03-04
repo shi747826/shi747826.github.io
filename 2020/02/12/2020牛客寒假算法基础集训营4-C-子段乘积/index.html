@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
   <title itemprop="name">2020牛客寒假算法基础集训营4 C-子段乘积 | SQRock</title>
@@ -58,11 +58,11 @@
   .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
   </style>
   <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
-  </style>
+  </style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 </html>
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
-  <div class="scrollbar" id="bar">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="scrollbar" id="bar">
   </div>
   <a href="#" class="cd-top faa-float animated"></a>
   <section id="main-container">
@@ -333,10 +333,13 @@
 <p>0 &lt;= a<sub>i</sub> &lt; 998244353</p>
 <h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h2><p>输出一个整数，代表最大余数。</p>
 <h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><pre><code>5 3
-1 2 3 0 8</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>6</code></pre><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><pre><code>1∗2∗3 mod 998244353 = 6</code></pre><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>题意很简单，求的是区间为k的所有数之积 mod 998244353 的最大值是多少。暴力思路只用将所有长度为k的区间计算一遍纪录最大值就行了，这样时间复杂度为O（(n-k)*k）, 差不多就是O（n<sup>2</sup>)。 必然会超时。</p>
+1 2 3 0 8
+</code></pre><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><pre><code>6
+</code></pre><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><pre><code>1∗2∗3 mod 998244353 = 6
+</code></pre><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>题意很简单，求的是区间为k的所有数之积 mod 998244353 的最大值是多少。暴力思路只用将所有长度为k的区间计算一遍纪录最大值就行了，这样时间复杂度为O（(n-k)*k）, 差不多就是O（n<sup>2</sup>)。 必然会超时。</p>
 <p>正确做法是用线段树储存每个数，线段树查询的时间复杂度O（log<sub>n</sub>) ，总体来说就是O（nlog<sub>n</sub>)。</p>
 <p>这道题也没有修改什么的，只需要建树，暴力区间查询就可以了。</p>
-<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+<pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
 #define LC(a)     ((a&lt;&lt;1))
 #define RC(a)     ((a&lt;&lt;1)+1)
 #define MID(a,b)  ((a+b)&gt;&gt;1)
@@ -382,7 +385,6 @@ int main()
     cout&lt;&lt;ans&lt;&lt;endl;
     return 0;
 }
-
 </code></pre>
 
         </div>
@@ -808,6 +810,23 @@ $(document).ready(function() {
       }
     })
   });
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
 </script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>

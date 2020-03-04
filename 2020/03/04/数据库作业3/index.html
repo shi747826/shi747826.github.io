@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">SQRock</title>
+  <title itemprop="name">数据库作业3 | SQRock</title>
   
     <link rel="shortcut icon" href="/images/头像.jpg">
   
@@ -290,499 +290,135 @@
   </div>
 </header>
 
-      <div class="blank" style="padding-top: 0px;"></div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3443.GIF);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3443.GIF">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      数据库作业3</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://www.shi747826.com">
+            <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.1/images/头像.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://www.shi747826.com">SQRock</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-3-4<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
-  
-  <div class="notice" style="margin-top:60px">
-    <i class="iconfont icon-notification">
-    </i>
-    <div class="notice-content">bug有点多,正在施工中,见谅...</div>
-  </div>
-  
-  <div class="top-feature-row">
-  <h1 class="fes-title" style="font-family: 'Ubuntu', sans-serif;">
-  <i class="fa fa-anchor" aria-hidden="true">
-  </i>
-  START:DASH!!</h1>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="/theme-sakura/" target="_blank">
-        <div class="img">
-          <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3465.GIF">
-        </div>
-        <div class="info">
-          <h3>Sakura</h3>
-          <p>本站 hexo 主题</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="http://space.bilibili.com/271849279" target="_blank">
-        <div class="img">
-          <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3470.GIF">
-        </div>
-        <div class="info">
-          <h3>Bilibili</h3>
-          <p>博主的b站视频</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-  <div class="top-feature-v2">
-    <div class="the-feature square from_left_and_right">
-      <a href="/" target="_blank">
-        <div class="img">
-          <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3472.GIF">
-        </div>
-        <div class="info">
-          <h3>hojun的万事屋</h3>
-          <p>技术服务</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-</div>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <h1 class="main-title" style="font-family: 'Ubuntu', sans-serif;">
-      <i class="fa fa-envira" aria-hidden="true"></i>
-      Discovery</h1>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>1.设学生选课数据库中包括三个表：</p>
+<p>学生表：Student （Sno，Sname，Sex，Sage，Sdept）</p>
+<p>课程表：Course（Cno，Cname，Ccredit）</p>
+<p>学生选课表：SC（Sno，Cno，Grade）</p>
+<p>其中Sno、Sname、Sex、Sage、Sdept、 Cno、Cname、Ccredit 、Grade分别表示学号、姓名、性别、年龄、所在系名、课程号、课程名、学分和成绩。假设上述三个表中已有若干条记录，用关系代数表示下列查询。</p>
+<p>1） 查询年龄大于21的男生学号和姓名</p>
+<p><strong>$\pi$<sub>Sno,Sname</sub>($\sigma$<sub>Sage&gt;21,Sex=’男’ </sub>(Student))</strong></p>
+<p>2) 查询选了“数据库”这门课的学生的学号。</p>
+<p><strong>$\pi$<sub>Sno</sub>($\sigma$<sub>Cname=’数据库’</sub> (Coutse) $\Join$  SC)</strong></p>
+<p>3) 查询“李强”同学不学课程的课程号。</p>
+<p><strong>Course - $\pi$<sub>Cno,Cname,Ccredit</sub>($\sigma$<sub>Sname=’李强’</sub> (Student) $\Join$ SC $\Join$ Course)</strong></p>
+<p>4) 实现查询选修了全部课程的学生号码</p>
+<p>$\pi$<strong><sub>Sno,Cno</sub>(SC) $\div$ $\pi$<sub>Cno</sub>(Course)</strong></p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/donate/alipay.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/donate/wechatpay.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2020/02/24/数据库作业2/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3442.GIF" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3442.GIF">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                数据库作业2</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "UxYfusXUbSO4XIT105k8RsWo-gzGzoHsz",
+        appKey: "Qcqav1HXc6Afma8BAuuFY9LA",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-  <div class="post-thumb">
-    <a href="/2020/03/04/数据库作业3/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3443.GIF">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-3-4 14:03</div>
-      <a href="/2020/03/04/数据库作业3/" class="post-title">
-        <h3>数据库作业3</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/数据库/">数据库<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/笔记/">笔记</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2020/03/04/数据库作业3/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="https://www.shi747826.com" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.1/images/头像.jpg" itemprop="image" alt="SQRock" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://www.shi747826.com" itemprop="url" rel="author">SQRock</a>
+            </h3>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/02/24/数据库作业2/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3442.GIF">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-2-24 12:02</div>
-      <a href="/2020/02/24/数据库作业2/" class="post-title">
-        <h3>数据库作业2</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/数据库/">数据库<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/笔记/">笔记</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2020/02/24/数据库作业2/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/02/24/数据库第一章/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3441.GIF">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-2-24 12:02</div>
-      <a href="/2020/02/24/数据库第一章/" class="post-title">
-        <h3>数据库第一章</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/数据库/">数据库<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/笔记/">笔记</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>第一章笔记，有点乱</p>
-        <div class="post-bottom">
-          <a href="/2020/02/24/数据库第一章/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/02/23/Codeforces-Round-622-Div-2/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3440.GIF">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-2-23 21:02</div>
-      <a href="/2020/02/23/Codeforces-Round-622-Div-2/" class="post-title">
-        <h3>Codeforces Round #622 (Div. 2)</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/codeforces/">codeforces<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/算法/">算法</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>乱搞上一大波分， i了。</p>
-        <div class="post-bottom">
-          <a href="/2020/02/23/Codeforces-Round-622-Div-2/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/02/17/数据库作业1/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3438.GIF">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-2-17 12:02</div>
-      <a href="/2020/02/17/数据库作业1/" class="post-title">
-        <h3>数据库作业1</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/数据库/">数据库<em>·</em></a>
-          
-            <a href="/tags/作业/">作业<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/笔记/">笔记</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>网课的第一天，作业写电子版，舒服。</p>
-        <div class="post-bottom">
-          <a href="/2020/02/17/数据库作业1/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/02/15/2020牛客寒假算法基础集训营6-D-重排列/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3437.GIF">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-2-15 17:02</div>
-      <a href="/2020/02/15/2020牛客寒假算法基础集训营6-D-重排列/" class="post-title">
-        <h3>2020牛客寒假算法基础集训营6 D-重排列</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/二分/">二分<em>·</em></a>
-          
-            <a href="/tags/贪心/">贪心<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/算法/">算法</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>运算符优先级搞死我了</p>
-        <div class="post-bottom">
-          <a href="/2020/02/15/2020牛客寒假算法基础集训营6-D-重排列/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/02/12/2020牛客寒假算法基础集训营4-C-子段乘积/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3436.GIF">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-2-12 16:02</div>
-      <a href="/2020/02/12/2020牛客寒假算法基础集训营4-C-子段乘积/" class="post-title">
-        <h3>2020牛客寒假算法基础集训营4 C-子段乘积</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/线段树/">线段树<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/算法/">算法</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>线段树裸题，可是我不会啊，wtcl。</p>
-        <div class="post-bottom">
-          <a href="/2020/02/12/2020牛客寒假算法基础集训营4-C-子段乘积/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/01/30/Educational-Codeforces-Round-81-Rated-for-Div-2-B-Infinite-Prefixes/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3435.GIF">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-1-30 10:01</div>
-      <a href="/2020/01/30/Educational-Codeforces-Round-81-Rated-for-Div-2-B-Infinite-Prefixes/" class="post-title">
-        <h3>Educational Codeforces Round 81 (Rated for Div. 2) B. Infinite Prefixes</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/codeforces/">codeforces<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/算法/">算法</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>全场字符串(自闭.jpg)</p>
-        <div class="post-bottom">
-          <a href="/2020/01/30/Educational-Codeforces-Round-81-Rated-for-Div-2-B-Infinite-Prefixes/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/01/28/Codeforces-Round-608-Div-2-B-Blocks/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3434.GIF">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-1-28 14:01</div>
-      <a href="/2020/01/28/Codeforces-Round-608-Div-2-B-Blocks/" class="post-title">
-        <h3>Codeforces Round #608 (Div. 2) B. Blocks</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/codeforces/">codeforces<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/算法/">算法</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2020/01/28/Codeforces-Round-608-Div-2-B-Blocks/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2020/01/27/Mamba-out/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.4.2/img/3.jpg">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2020-1-27 08:01</div>
-      <a href="/2020/01/27/Mamba-out/" class="post-title">
-        <h3> Mamba out</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/生活/">生活</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p>愿天堂也有亲爱的篮球</p>
-        <div class="post-bottom">
-          <a href="/2020/01/27/Mamba-out/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-
-
-    </main>
-      <!-- 首页默认取最最新文章集 -->
-    <!-- 
-      <nav class="navigator">
-        
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="iconfont icon-right"></i></a>
-      </nav>
-     -->
-  </div>
-  
-    <div id="pagination"><a href="/page/2/" class="">Previous</a></div>
-  
+        <hr>
+        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">

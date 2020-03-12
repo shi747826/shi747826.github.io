@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: 二分 | SQRock</title>
+  <title itemprop="name">Codeforces Round #627 (Div. 3) D、E | SQRock</title>
   
     <link rel="shortcut icon" href="/images/头像.jpg">
   
@@ -290,97 +290,207 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="二分.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3444.GIF);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3444.GIF">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Codeforces Round #627 (Div. 3) D、E</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://www.shi747826.com">
+            <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.1/images/头像.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://www.shi747826.com">SQRock</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-3-12<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">二分</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="D-Pair-of-Topics"><a href="#D-Pair-of-Topics" class="headerlink" title="D. Pair of Topics"></a><a href="https://codeforces.ml/contest/1324/problem/D" target="_blank" rel="noopener">D. Pair of Topics</a></h1><p>The next lecture in a high school requires two topics to be discussed. The i-th topic is interesting by a<sub>i</sub> units for the teacher and by b<sub>i</sub> units for the students.</p>
+<p>The pair of topics i and j (i &lt; j) is called <strong>good</strong> if a<sub>i</sub> + a<sub>j</sub> &gt; b<sub>i</sub> + b<sub>j</sub> (i.e. it is more interesting for the teacher).</p>
+<p>Your task is to find the number of <strong>good</strong> pairs of topics.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h2><p>The first line of the input contains one integer n (2 ≤ n ≤ 2⋅10<sup>5</sup>) — the number of topics.</p>
+<p>The second line of the input contains n integers a<sub>1</sub>,a<sub>2</sub>,…,a<sub>n</sub> (1 ≤ a<sub>i</sub> ≤ 10<sup>9</sup>), where a<sub>i</sub> is the interestingness of the i-th topic for the teacher.</p>
+<p>The third line of the input contains n integers b<sub>1</sub>,b<sub>2</sub>,…,b<sub>n</sub> (1 ≤ b<sub>i</sub> ≤ 10<sup>9</sup>), where b<sub>i</sub> is the interestingness of the i-th topic for the students.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>Print one integer — the number of <strong>good</strong> pairs of topic.</p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a><strong>Examples</strong></h2><p><strong>input</strong></p>
+<pre><code>5
+4 8 2 6 2
+4 5 4 1 3
+</code></pre><p><strong>output</strong></p>
+<pre><code>7
+</code></pre><p><strong>input</strong></p>
+<pre><code>4
+1 3 2 4
+1 3 2 4
+</code></pre><p><strong>output</strong></p>
+<pre><code>0
+</code></pre><h2 id="Problem-solving"><a href="#Problem-solving" class="headerlink" title="Problem solving"></a>Problem solving</h2><p>题意就是让你选出两个下标i , j，求符合a<sub>i</sub> + a<sub>j</sub> &gt; b<sub>i</sub> + b<sub>j</sub> 的有多少对。</p>
+<p>可以直接让a减去b中下标相等的值，然后从大到小排序。</p>
+<p>这样就变成从一个数组中挑选两个数和大于0的问题。</p>
+<p>因为只选了两个下标，所以只需要先选一个，另外一个用二分查找就可以了。</p>
+<pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
+#define IOS()     std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)
+using namespace std;
+typedef long long ll;
+const ll N = 2e5+7;
+ll a[N];
+ll cmp(ll a,ll b)
+{
+    return a&gt;b;
+}
+inline void solve()
+{
+    int n;
+    cin&gt;&gt;n;
+    for(int i=0;i&lt;n;i++) cin&gt;&gt;a[i];
+    for(int i=0;i&lt;n;i++)
+    {
+        ll x;cin&gt;&gt;x;
+        a[i]-=x;
+    }
+    sort(a,a+n,cmp);
+    ll ans = 0;
+    for(int i=0;i&lt;n;i++)
+    {
+        if(a[i]&lt;=0) break;
+
+        int l=i,r=n-1;
+
+        while(l&lt;r)
+        {
+            int mid = (l+r+1)/2;
+
+            if(a[i]+a[mid]&lt;=0) r=mid-1;
+            else l = mid;
+        }
+        ans += l-i;
+    }
+    cout&lt;&lt;ans&lt;&lt;endl;
+
+}
+int main()
+{
+    IOS();
+    solve();
+    return 0;
+}
+</code></pre>
+<h1 id="E-Sleeping-Schedule"><a href="#E-Sleeping-Schedule" class="headerlink" title="E. Sleeping Schedule"></a><a href="https://codeforces.ml/contest/1324/problem/E" target="_blank" rel="noopener">E. Sleeping Schedule</a></h1><p>Vova had a pretty weird sleeping schedule. There are h hours in a day. Vova will sleep exactly n times. The ii-th time he will sleep exactly after ai hours from the time he woke up. You can assume that Vova woke up exactly at the beginning of this story (the initial time is 00). Each time Vova sleeps <strong>exactly one day</strong> (in other words, h hours).</p>
+<p>Vova thinks that the ii-th sleeping time is <strong>good</strong> if he starts to sleep between hours l and r inclusive.</p>
+<p>Vova can control himself and before the ii-th time can choose between two options: go to sleep after ai hours or after ai − 1 hours.</p>
+<p>Your task is to say the maximum number of <strong>good</strong> sleeping times Vova can obtain if he acts optimally.</p>
+<h2 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a><strong>Input</strong></h2><p>The first line of the input contains four integers n,h,l and r (1 ≤ n ≤ 2000,3 ≤ h ≤ 2000,0 ≤ l ≤ r &lt; h) — the number of times Vova goes to sleep, the number of hours in a day and the segment of the <strong>good</strong> sleeping time.</p>
+<p>The second line of the input contains n integers a1,a2,…,an(1 ≤ ai &lt; h), where ai is the number of hours after which Vova goes to sleep the ii-th time.</p>
+<h2 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h2><p>Print one integer — the maximum number of <strong>good</strong> sleeping times Vova can obtain if he acts optimally.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a><strong>Example</strong></h2><p><strong>input</strong></p>
+<pre><code>7 24 21 23
+16 17 14 20 20 11 22
+</code></pre><p><strong>output</strong></p>
+<pre><code>3
+</code></pre><h2 id="Problem-solving-1"><a href="#Problem-solving-1" class="headerlink" title="Problem solving"></a>Problem solving</h2><p>题意是说规定一天有h小时，每次睡觉都可以控制睡ai或者ai-1小时，经过n次后最多有多少次醒来的时间在 [l, r] 区间内。</p>
+<p>DP 待补！</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/donate/alipay.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/donate/wechatpay.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2020/03/04/数据库作业3/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3443.GIF" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3443.GIF">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                数据库作业3</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/03/12/Codeforces-Round-627-Div-3-D、E/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3444.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/03/12/Codeforces-Round-627-Div-3-D、E/">
-    Codeforces Round #627 (Div. 3) D、E</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-12</div>
-    <p>
-    DP快拖一年了,越拖越不会</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/03/12/Codeforces-Round-627-Div-3-D、E/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/02/15/2020牛客寒假算法基础集训营6-D-重排列/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3437.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/02/15/2020牛客寒假算法基础集训营6-D-重排列/">
-    2020牛客寒假算法基础集训营6 D-重排列</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-2-15</div>
-    <p>
-    运算符优先级搞死我了</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/02/15/2020牛客寒假算法基础集训营6-D-重排列/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "UxYfusXUbSO4XIT105k8RsWo-gzGzoHsz",
+        appKey: "Qcqav1HXc6Afma8BAuuFY9LA",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="https://www.shi747826.com" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.1/images/头像.jpg" itemprop="image" alt="SQRock" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://www.shi747826.com" itemprop="url" rel="author">SQRock</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

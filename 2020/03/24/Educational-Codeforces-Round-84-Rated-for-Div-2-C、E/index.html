@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Category: 算法 | SQRock</title>
+  <title itemprop="name">Educational Codeforces Round 84 (Rated for Div. 2) C、E | SQRock</title>
   
     <link rel="shortcut icon" href="/images/头像.jpg">
   
@@ -290,501 +290,230 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.4/images/归档/算法.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3445.GIF);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3445.GIF">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Educational Codeforces Round 84 (Rated for Div. 2) C、E</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://www.shi747826.com">
+            <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.1/images/头像.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://www.shi747826.com">SQRock</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-3-24<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">算法</h1>
-    <span class="cat-des">
-      <p>algorithm</p>
-    </span>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="C-Game-with-Chips"><a href="#C-Game-with-Chips" class="headerlink" title="C. Game with Chips"></a><a href="https://codeforces.ml/contest/1327/problem/C" target="_blank" rel="noopener">C. Game with Chips</a></h1><p>Petya has a rectangular Board of size n×m. Initially, k chips are placed on the board, i-th chip is located in the cell at the intersection of s<sub>xi</sub>-th row and  s<sub>yi</sub>-th column.</p>
+<p>In one action, Petya can move <strong>all the chips</strong> to the left, right, down or up by 11 cell.</p>
+<p>If the chip was in the (x, y) cell, then after the operation:</p>
+<ul>
+<li>left, its coordinates will be (x,  y − 1);</li>
+<li>right, its coordinates will be (x,  y + 1);</li>
+<li>down, its coordinates will be (x + 1,  y);</li>
+<li>up, its coordinates will be (x − 1,  y).</li>
+</ul>
+<p>If the chip is located by the wall of the board, and the action chosen by Petya moves it towards the wall, then the chip remains in its current position.</p>
+<p><strong>Note that several chips can be located in the same cell.</strong></p>
+<p>For each chip, Petya chose the position which it should visit. Note that it’s not necessary for a chip to end up in this position.</p>
+<p>Since Petya does not have a lot of free time, he is ready to do no more than <strong>2nm</strong> actions.</p>
+<p>You have to find out what actions Petya should do so that each chip visits the position that Petya selected for it at least once. Or determine that it is not possible to do this in <strong>2nm</strong> actions.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h2><p>The first line contains three integers n, m, k (1 ≤ n, m, k ≤ 200) — the number of rows and columns of the board and the number of chips, respectively.</p>
+<p>The next k lines contains two integers each s<sub>xi</sub>, s<sub>yi</sub> (1 ≤ s<sub>xi </sub>≤ n,1 ≤ s<sub>yi</sub> ≤ m) — the starting position of the i-th chip.</p>
+<p>The next kk lines contains two integers each f<sub>xi</sub>, f<sub>yi</sub> (1 ≤ f<sub>xi </sub>≤ n, 1 ≤ f<sub>yi </sub>≤ m) — the position that the i-chip should visit at least once.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>In the first line print the number of operations so that each chip visits the position that Petya selected for it at least once.</p>
+<p>In the second line output the sequence of operations. To indicate operations left, right, down, and up, use the characters <strong>L,R,D,U</strong> respectively.</p>
+<p>If the required sequence does not exist, print <strong>-1</strong> in the single line.</p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a><strong>Examples</strong></h2><p><strong>input</strong></p>
+<pre><code>3 3 2
+1 2
+2 1
+3 3
+3 2
+</code></pre><p><strong>output</strong></p>
+<pre><code>3
+DRD
+</code></pre><p><strong>input</strong></p>
+<pre><code>5 4 3
+3 4
+3 1
+3 3
+5 3
+1 3
+1 4
+</code></pre><p><strong>output</strong></p>
+<pre><code>9
+DDLUUUURR
+</code></pre><h2 id="Problem-solving"><a href="#Problem-solving" class="headerlink" title="Problem solving"></a>Problem solving</h2><p>题意就是在一个 n*m 的矩阵中给你 k 个点的起始位置和终止位置，让你输出一个长度小于 2nm 的字符串（只包括U,D,L,R，表示移动的方向，当移动到边界时就原地不动），这个字符串控制所有的k个点，让每个点都会至少经过一次自己对应的终止点。</p>
+<p>这道题没有要求输出最小的字符串，所以可以直接让所有的起始点都置于矩阵的左上角，然后从左上角开始，到右下角，依次访问矩阵的每个点，</p>
+<pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
+#define fi        first
+#define se        second
+#define pb        push_back
+#define PI        acos(-1)
+#define LC(a)     ((a&lt;&lt;1))
+#define RC(a)     ((a&lt;&lt;1)+1)
+#define MID(a,b)  ((a+b)&gt;&gt;1)
+#define mem(a, b) memset(a, b, sizeof(a))
+#define IOS()     std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)
+using namespace std;
+typedef long long ll;
+typedef unsigned long long ULL;
+typedef pair&lt;int,int&gt; PII;
+typedef pair&lt;ll,ll&gt;   PLL;
+typedef pair&lt;ll,int&gt;  PLI;
+const int INF = 0X3F3F3F3F;
+const int MIN = -(1&lt;&lt;30);
+const ll N = 1e5+7;
+inline void solve()
+{
+    int n,m,k;
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;k;
+    int x,y;
+    for(int i=0; i&lt;k; i++) cin&gt;&gt;x&gt;&gt;y;//与输入的起始点和终止点无关了
+    for(int i=0; i&lt;k; i++) cin&gt;&gt;x&gt;&gt;y;
+
+    string s=&quot;&quot;;
+    for(int i=n; i&gt;1; i--) s=s+&#39;U&#39;;//把所有点向上向左移到左上角 
+    for(int j=m; j&gt;1; j--) s=s+&#39;L&#39;;
+
+    for(int i=1; i&lt;=n; i++)//n行 
+    {
+        if(i&amp;1) //奇数行向右 
+            for(int j=1; j&lt;m; j++) s=s+&#39;R&#39;;
+        else   //偶数行向左 
+            for(int j=m; j&gt;1; j--) s=s+&#39;L&#39;;
+        if(i!=n) s+=&#39;D&#39;; //除了最后一行 每行走到头的时候向下 
+    }
+    cout&lt;&lt;s.size()&lt;&lt;endl&lt;&lt;s&lt;&lt;endl;
+}
+int main()
+{
+    IOS();
+    solve();
+    return 0;
+}
+</code></pre>
+<h1 id="E-Count-The-Blocks"><a href="#E-Count-The-Blocks" class="headerlink" title="E. Count The Blocks"></a>E. Count The Blocks</h1><p>You wrote down all integers from 0 to 10<sup>n</sup> − 1, padding them with leading zeroes so their lengths are exactly n. For example, if n = 3 then you wrote out 000, 001, …, 998, 999.</p>
+<p>A block in an integer x is a consecutive segment of equal digits that cannot be extended to the left or to the right.</p>
+<p>For example, in the integer 00027734000 there are three blocks of length 1, one block of length 2 and two blocks of length 3.</p>
+<p>For all integers i from 1 to n count the number of blocks of length i among the written down integers.</p>
+<p>Since these integers may be too large, print them modulo 998244353.</p>
+<h2 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h2><p>The only line contains one integer n (1 ≤ n ≤ 2⋅10<sup>5</sup>).</p>
+<h2 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h2><p>In the only line print n integers. The i-th integer is equal to the number of blocks of length i.</p>
+<p>Since these integers may be too large, print them modulo 998244353.</p>
+<h2 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples"></a>Examples</h2><p><strong>input</strong></p>
+<pre><code>1
+</code></pre><p><strong>output</strong></p>
+<pre><code>10
+</code></pre><p><strong>input</strong></p>
+<pre><code>2
+</code></pre><p><strong>output</strong></p>
+<pre><code>180 10
+</code></pre><p>上完课再补</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/donate/alipay.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/donate/wechatpay.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2020/03/12/Codeforces-Round-627-Div-3-D、E/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3444.GIF" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3444.GIF">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Codeforces Round #627 (Div. 3) D、E</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/03/24/Educational-Codeforces-Round-84-Rated-for-Div-2-C、E/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3445.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/03/24/Educational-Codeforces-Round-84-Rated-for-Div-2-C、E/">
-    Educational Codeforces Round 84 (Rated for Div. 2) C、E</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-24</div>
-    <p>
-    被Educational场教育了，一晚上迷迷糊糊的</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/03/24/Educational-Codeforces-Round-84-Rated-for-Div-2-C、E/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/03/12/Codeforces-Round-627-Div-3-D、E/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3444.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/03/12/Codeforces-Round-627-Div-3-D、E/">
-    Codeforces Round #627 (Div. 3) D、E</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-12</div>
-    <p>
-    DP快拖一年了,越拖越不会</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/03/12/Codeforces-Round-627-Div-3-D、E/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/02/23/Codeforces-Round-622-Div-2/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3440.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/02/23/Codeforces-Round-622-Div-2/">
-    Codeforces Round #622 (Div. 2)</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-2-23</div>
-    <p>
-    乱搞上一大波分， i了。</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/02/23/Codeforces-Round-622-Div-2/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/02/15/2020牛客寒假算法基础集训营6-D-重排列/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3437.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/02/15/2020牛客寒假算法基础集训营6-D-重排列/">
-    2020牛客寒假算法基础集训营6 D-重排列</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-2-15</div>
-    <p>
-    运算符优先级搞死我了</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/02/15/2020牛客寒假算法基础集训营6-D-重排列/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/02/12/2020牛客寒假算法基础集训营4-C-子段乘积/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3436.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/02/12/2020牛客寒假算法基础集训营4-C-子段乘积/">
-    2020牛客寒假算法基础集训营4 C-子段乘积</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-2-12</div>
-    <p>
-    线段树裸题，可是我不会啊，wtcl。</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/02/12/2020牛客寒假算法基础集训营4-C-子段乘积/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/01/30/Educational-Codeforces-Round-81-Rated-for-Div-2-B-Infinite-Prefixes/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3435.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/01/30/Educational-Codeforces-Round-81-Rated-for-Div-2-B-Infinite-Prefixes/">
-    Educational Codeforces Round 81 (Rated for Div. 2) B. Infinite Prefixes</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-1-30</div>
-    <p>
-    全场字符串(自闭.jpg)</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/01/30/Educational-Codeforces-Round-81-Rated-for-Div-2-B-Infinite-Prefixes/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/01/28/Codeforces-Round-608-Div-2-B-Blocks/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3434.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/01/28/Codeforces-Round-608-Div-2-B-Blocks/">
-    Codeforces Round #608 (Div. 2) B. Blocks</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-1-28</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/01/28/Codeforces-Round-608-Div-2-B-Blocks/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "UxYfusXUbSO4XIT105k8RsWo-gzGzoHsz",
+        appKey: "Qcqav1HXc6Afma8BAuuFY9LA",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="https://www.shi747826.com" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.1/images/头像.jpg" itemprop="image" alt="SQRock" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://www.shi747826.com" itemprop="url" rel="author">SQRock</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
 
-<!-- 
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/03/24/Educational-Codeforces-Round-84-Rated-for-Div-2-C、E/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3445.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/03/24/Educational-Codeforces-Round-84-Rated-for-Div-2-C、E/">
-    Educational Codeforces Round 84 (Rated for Div. 2) C、E</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-24</div>
-    <p>
-    被Educational场教育了，一晚上迷迷糊糊的</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/03/24/Educational-Codeforces-Round-84-Rated-for-Div-2-C、E/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/03/12/Codeforces-Round-627-Div-3-D、E/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3444.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/03/12/Codeforces-Round-627-Div-3-D、E/">
-    Codeforces Round #627 (Div. 3) D、E</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-3-12</div>
-    <p>
-    DP快拖一年了,越拖越不会</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/03/12/Codeforces-Round-627-Div-3-D、E/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/02/23/Codeforces-Round-622-Div-2/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3440.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/02/23/Codeforces-Round-622-Div-2/">
-    Codeforces Round #622 (Div. 2)</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-2-23</div>
-    <p>
-    乱搞上一大波分， i了。</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/02/23/Codeforces-Round-622-Div-2/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/02/15/2020牛客寒假算法基础集训营6-D-重排列/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3437.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/02/15/2020牛客寒假算法基础集训营6-D-重排列/">
-    2020牛客寒假算法基础集训营6 D-重排列</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-2-15</div>
-    <p>
-    运算符优先级搞死我了</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/02/15/2020牛客寒假算法基础集训营6-D-重排列/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/02/12/2020牛客寒假算法基础集训营4-C-子段乘积/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3436.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/02/12/2020牛客寒假算法基础集训营4-C-子段乘积/">
-    2020牛客寒假算法基础集训营4 C-子段乘积</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-2-12</div>
-    <p>
-    线段树裸题，可是我不会啊，wtcl。</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/02/12/2020牛客寒假算法基础集训营4-C-子段乘积/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/01/30/Educational-Codeforces-Round-81-Rated-for-Div-2-B-Infinite-Prefixes/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3435.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/01/30/Educational-Codeforces-Round-81-Rated-for-Div-2-B-Infinite-Prefixes/">
-    Educational Codeforces Round 81 (Rated for Div. 2) B. Infinite Prefixes</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-1-30</div>
-    <p>
-    全场字符串(自闭.jpg)</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/01/30/Educational-Codeforces-Round-81-Rated-for-Div-2-B-Infinite-Prefixes/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2020/01/28/Codeforces-Round-608-Div-2-B-Blocks/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3434.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2020/01/28/Codeforces-Round-608-Div-2-B-Blocks/">
-    Codeforces Round #608 (Div. 2) B. Blocks</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2020-1-28</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2020/01/28/Codeforces-Round-608-Div-2-B-Blocks/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
 
- -->
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

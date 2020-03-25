@@ -432,7 +432,59 @@ int main()
 <pre><code>2
 </code></pre><p><strong>output</strong></p>
 <pre><code>180 10
-</code></pre><p>上完课再补</p>
+</code></pre><h2 id="Problem-solving-1"><a href="#Problem-solving-1" class="headerlink" title="Problem solving"></a>Problem solving</h2><p>题意让求的是从 0 到 10<sup>n</sup> - 1的这些数中（包括前导0，所以都是n位数）， 对应的每个长度i一共有多少个block。 block指的是连续相同的数字的长度，无法向左向右扩展。</p>
+<p>例如：<code>00027734000</code>有2个长度为3的block，1个长度为2的block，3个长度为1的block.</p>
+<p>可以理解为现在有n个空，每个空都可以插入0-9的一个数字，所有这些排列中长度为i的block有多少个。</p>
+<p>因为所求的是长度为i的block，我们不妨直接插入一段长度为i的连续相等的一串数字，然后处理这串数字两端相邻的位置，让他们不与插入的数字相等即可。这里分两种情况：</p>
+<ul>
+<li>[ ] 插入的串两端都不在边界，插入的连续串可以为0-9，10种，两端相邻的位置不能和他相同，所以有9种。其他的位置可以随便，都是10种。而长度为i的串在n个为位置中有（n-i+1）个位置可以查入，减去两端的边界，就有（n-i-1)个位置可以插入。所以一共有：(n-i-1) <em> 10 </em> 9 <em> 9 </em>  10 <sup>n-i-2</sup> 个block，n-i-2是剩余随便插的空格。</li>
+<li>[ ] 插入的串两端有一端在边界。因为有一端在边界，所以只需要处理另一端不在边界的相邻位置就行了。这种情况有 2 <em> 10 </em> 9 * 10 <sup>n-i-1</sup> 个block，这里乘上2是因为有两个边界，不知道哪一端在边界上。</li>
+</ul>
+<p>这两种情况加起来就是所求的block的个数了</p>
+<pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
+#define fi        first
+#define se        second
+#define pb        push_back
+#define PI        acos(-1)
+#define LC(a)     ((a&lt;&lt;1))
+#define RC(a)     ((a&lt;&lt;1)+1)
+#define MID(a,b)  ((a+b)&gt;&gt;1)
+#define mem(a, b) memset(a, b, sizeof(a))
+#define IOS()     std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)
+using namespace std;
+typedef long long ll;
+typedef unsigned long long ULL;
+typedef pair&lt;int,int&gt; PII;
+typedef pair&lt;ll,ll&gt;   PLL;
+typedef pair&lt;ll,int&gt;  PLI;
+const int INF = 0X3F3F3F3F;
+const int MIN = -(1&lt;&lt;30);
+const ll N = 2e5+7;
+const ll mod = 998244353;
+ll fac[N];
+ll ans[N];
+inline void solve()
+{
+    fac[0]=1; 
+    for(int i=1; i&lt;N; i++) fac[i] = fac[i-1]*10%mod; //把10的N次方预处理一下 
+
+    ll n;
+    cin&gt;&gt;n;
+    ans[n] = 10;
+    for(int i=n-1; i&gt;=1; i--)
+        ans[i] = (((n-i-1)*10*9*9*fac[n-i-2])%mod + (10*9*2*fac[n-i-1])%mod)%mod;
+    for(int i=1; i&lt;=n; i++)
+        cout&lt;&lt;ans[i]&lt;&lt;&quot; &quot;;
+    cout&lt;&lt;endl;
+
+}
+int main()
+{
+    IOS();
+    solve();
+    return 0;
+}
+</code></pre>
 
         </div>
         <!-- .entry-content -->

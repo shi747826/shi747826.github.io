@@ -461,14 +461,14 @@ int main()
 </code></pre><h2 id="Problem-solving-2"><a href="#Problem-solving-2" class="headerlink" title="Problem solving"></a>Problem solving</h2><p>题意中定义了一个三进制的异或规则(对应位上的数相加余3)，然后给你一个数x，让你输出两个数a,b，要保证这两个数的异或和等于x，并且这俩个数的最大值最小。即 ：a XOR b = x ,  max(a,b)尽可能小。</p>
 <p>我们只需要单独分析每一位上的数即可。根据上面的异或规则，我们可以得出：</p>
 <ul>
-<li>[ ] 2 = 1 xor 1 或 0 xor 2 或 2 xor 0  (因为要保证尽可能小，所以a+b不应大于3)</li>
-<li>[ ] 1 = 0 xor 1 或 1 xor 0</li>
-<li>[ ] 0 = 0 xor 0</li>
+<li>2 = 1 xor 1 或 0 xor 2 或 2 xor 0  (因为要保证尽可能小，所以a+b不应大于3)</li>
+<li>1 = 0 xor 1 或 1 xor 0</li>
+<li>0 = 0 xor 0</li>
 </ul>
 <p>我们令a&gt;b。从左到右依次判断x的每一位，</p>
 <ul>
-<li>[ ] 如果还没分出大小：我们需要保证a,b尽量相同，即当x[i] = 2时，a[i]=b[i]=1；当x[i] = 0时，a[i]=b[i]=0。当x[i]=1时，a[i]=1，b[i]=0，这时无论后面怎么取值a已经大于b了;</li>
-<li>[ ] 如果已经分出了大小：只需要将a后面的全都补0，b后面照抄z就行了，这样就保证了大值a尽可能小。</li>
+<li>如果还没分出大小：我们需要保证a,b尽量相同，即当x[i] = 2时，a[i]=b[i]=1；当x[i] = 0时，a[i]=b[i]=0。当x[i]=1时，a[i]=1，b[i]=0，这时无论后面怎么取值a已经大于b了;</li>
+<li>如果已经分出了大小：只需要将a后面的全都补0，b后面照抄x就行了，这样就保证了大值a尽可能小。</li>
 </ul>
 <pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
 using namespace std;
@@ -484,8 +484,8 @@ inline void solve()
         if(flag)
         {
             if(s[i] == &#39;2&#39;) a += &quot;1&quot;,b += &quot;1&quot;;
-            if(s[i] == &#39;1&#39;) a += &quot;1&quot;,b += &quot;0&quot;,flag = 0;
             if(s[i] == &#39;0&#39;) a += &quot;0&quot;,b += &quot;0&quot;;
+            if(s[i] == &#39;1&#39;) a += &quot;1&quot;,b += &quot;0&quot;,flag = 0;
         }
         else
         {

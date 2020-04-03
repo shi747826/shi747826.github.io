@@ -382,11 +382,11 @@ int main()
     sort(a.begin(),a.end(),cmp);
 }
 </code></pre>
-<h1 id="include-60-stack-gt"><a href="#include-60-stack-gt" class="headerlink" title="#include&#60;stack&gt;"></a>#include&#60;stack&gt;</h1><p>先进后出（FILO）</p>
+<h1 id="include-60-stack-gt-栈"><a href="#include-60-stack-gt-栈" class="headerlink" title="#include&#60;stack&gt; 栈"></a>#include&#60;stack&gt; 栈</h1><p>先进后出（FILO）</p>
 <h2 id="声明-1"><a href="#声明-1" class="headerlink" title="声明"></a>声明</h2><p>stack&lt;Type&#62; s; //定义栈，Type为类型，如int、double、char、string或是自己定义的结构体类型</p>
 <h2 id="push-pop"><a href="#push-pop" class="headerlink" title="push/pop"></a>push/pop</h2><p>s.push(x); //入栈，把x放到栈顶</p>
 <p>s.pop(x); //出栈，删除栈顶元素，不返回值</p>
-<h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p>s.top();   //取栈顶元素,但不会删除</p>
+<h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p>s.top();   //返回栈顶元素的值,但不会删除</p>
 <p>遍历栈通常先用top取到栈顶元素，然后pop出栈。</p>
 <pre><code class="lang-c++">stack&lt;int&gt; st;
 while(st.size())
@@ -396,7 +396,7 @@ while(st.size())
     cout&lt;&lt;p&lt;&lt;endl;
 }
 </code></pre>
-<h1 id="include-lt-queue-62"><a href="#include-lt-queue-62" class="headerlink" title="#include&lt;queue&#62;"></a>#include&lt;queue&#62;</h1><p>先进先出（FIFO）</p>
+<h1 id="include-lt-queue-62-队列"><a href="#include-lt-queue-62-队列" class="headerlink" title="#include&lt;queue&#62; 队列"></a>#include&lt;queue&#62; 队列</h1><p>先进先出（FIFO）</p>
 <h2 id="声明-2"><a href="#声明-2" class="headerlink" title="声明"></a>声明</h2><p>queue&lt;Type&#62; que; //定义队列，Type为类型，如int、double、char、string或是自己定义的结构体类型</p>
 <h2 id="push-pop-1"><a href="#push-pop-1" class="headerlink" title="push/pop"></a>push/pop</h2><p>que.push(x); //入队，把x放到队列, O(1)</p>
 <p>que.pop(x); //出队，删除队首元素，不返回值, O(1)</p>
@@ -411,6 +411,7 @@ while(que.size())
     cout&lt;&lt;p&lt;&lt;endl;
 }
 </code></pre><h1 id="优先队列priority-queue"><a href="#优先队列priority-queue" class="headerlink" title="优先队列priority_queue"></a>优先队列priority_queue</h1><p>最大值优先级队列、最小值优先级队列 //   谁的值最大 或 最小 放在队头</p>
+<p>头文件也是#include&lt;queue&#62;</p>
 <h2 id="声明-3"><a href="#声明-3" class="headerlink" title="声明"></a>声明</h2><ul>
 <li>priority_queue&lt;int&#62; que; //默认是最大值优先级队列</li>
 <li>priority_queue&lt;int,vector&lt;int&#62;,less&lt;int&#62; &nbsp;&#62; que; 与默认的相同</li>
@@ -490,7 +491,7 @@ int main()
     }
 }
 </code></pre>
-<h1 id="include-lt-deque-62"><a href="#include-lt-deque-62" class="headerlink" title="#include&lt;deque&#62;"></a>#include&lt;deque&#62;</h1><h1 id="include-lt-set-62"><a href="#include-lt-set-62" class="headerlink" title="#include&lt;set&#62;"></a>#include&lt;set&#62;</h1><h1 id="include-lt-map-62"><a href="#include-lt-map-62" class="headerlink" title="#include&lt;map&#62;"></a>#include&lt;map&#62;</h1>
+<h1 id="include-lt-deque-62-双端队列"><a href="#include-lt-deque-62-双端队列" class="headerlink" title="#include&lt;deque&#62; 双端队列"></a>#include&lt;deque&#62; 双端队列</h1><h1 id="include-lt-set-62-集合"><a href="#include-lt-set-62-集合" class="headerlink" title="#include&lt;set&#62; 集合"></a>#include&lt;set&#62; 集合</h1><h1 id="include-lt-map-62-映射"><a href="#include-lt-map-62-映射" class="headerlink" title="#include&lt;map&#62; 映射"></a>#include&lt;map&#62; 映射</h1>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">

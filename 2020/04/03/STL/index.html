@@ -342,7 +342,8 @@
 <p>a.pop_back()&nbsp; 删除vector a的最后一个元素.</p>
 <h2 id="front-back"><a href="#front-back" class="headerlink" title="front/back"></a>front/back</h2><p>a.front()&nbsp; 返回vector a的第一个元素，相当于a[0].</p>
 <p>a.back()&nbsp;&nbsp;返回vector a的最后一个元素，相当于a[n-1] (n=a.size()).</p>
-<h2 id="erase-insert"><a href="#erase-insert" class="headerlink" title="erase/insert"></a>erase/insert</h2><p><br></p>
+<h2 id="insert-erase"><a href="#insert-erase" class="headerlink" title="insert/erase"></a>insert/erase</h2><p>插入和删除操作的时间复杂度都是O(n)，比较低效，不经常用。</p>
+<p><br></p>
 <p><br></p>
 <p><br></p>
 <h2 id="begin-end"><a href="#begin-end" class="headerlink" title="begin/end"></a>begin/end</h2><p>begin函数返回指向vector中第一个元素的<strong>迭代器</strong> 。*a.begin() 与 a[0]作用相同。</p>
@@ -397,10 +398,10 @@ while(st.size())
 </code></pre>
 <h1 id="include-lt-queue-62"><a href="#include-lt-queue-62" class="headerlink" title="#include&lt;queue&#62;"></a>#include&lt;queue&#62;</h1><p>先进先出（FIFO）</p>
 <h2 id="声明-2"><a href="#声明-2" class="headerlink" title="声明"></a>声明</h2><p>queue&lt;Type&#62; que; //定义队列，Type为类型，如int、double、char、string或是自己定义的结构体类型</p>
-<h2 id="push-pop-1"><a href="#push-pop-1" class="headerlink" title="push/pop"></a>push/pop</h2><p>que.push(x); //入队，把x放到队列</p>
-<p>que.pop(x); //出队，删除队首元素，不返回值</p>
-<h2 id="front-back-1"><a href="#front-back-1" class="headerlink" title="front/back"></a>front/back</h2><p>que.front(); //返回队首元素,不会删除</p>
-<p>que.back(); //返回队尾元素,不会删除</p>
+<h2 id="push-pop-1"><a href="#push-pop-1" class="headerlink" title="push/pop"></a>push/pop</h2><p>que.push(x); //入队，把x放到队列, O(1)</p>
+<p>que.pop(x); //出队，删除队首元素，不返回值, O(1)</p>
+<h2 id="front-back-1"><a href="#front-back-1" class="headerlink" title="front/back"></a>front/back</h2><p>que.front(); //返回队首元素,不会删除, O(1)</p>
+<p>que.back(); //返回队尾元素,不会删除, O(1)</p>
 <p>遍历队列和遍历栈的方法类似，先用front取到队首元素，然后pop出队。</p>
 <pre><code>queue&lt;int&gt; que;
 while(que.size())
@@ -409,7 +410,87 @@ while(que.size())
     que.pop();
     cout&lt;&lt;p&lt;&lt;endl;
 }
-</code></pre><h1 id="优先队列priority-queue"><a href="#优先队列priority-queue" class="headerlink" title="优先队列priority_queue"></a>优先队列priority_queue</h1><h1 id="include-lt-deque-62"><a href="#include-lt-deque-62" class="headerlink" title="#include&lt;deque&#62;"></a>#include&lt;deque&#62;</h1><h1 id="include-lt-set-62"><a href="#include-lt-set-62" class="headerlink" title="#include&lt;set&#62;"></a>#include&lt;set&#62;</h1><h1 id="include-lt-map-62"><a href="#include-lt-map-62" class="headerlink" title="#include&lt;map&#62;"></a>#include&lt;map&#62;</h1>
+</code></pre><h1 id="优先队列priority-queue"><a href="#优先队列priority-queue" class="headerlink" title="优先队列priority_queue"></a>优先队列priority_queue</h1><p>最大值优先级队列、最小值优先级队列 //   谁的值最大 或 最小 放在队头</p>
+<h2 id="声明-3"><a href="#声明-3" class="headerlink" title="声明"></a>声明</h2><ul>
+<li>priority_queue&lt;int&#62; que; //默认是最大值优先级队列</li>
+<li>priority_queue&lt;int,vector&lt;int&#62;,less&lt;int&#62; &nbsp;&#62; que; 与默认的相同</li>
+<li>priority_queue&lt;int,vector&lt;int&#62;,greater&lt;int&#62; &nbsp;&#62;  que;//最小值优先级队列</li>
+</ul>
+<h2 id="push-pop-top"><a href="#push-pop-top" class="headerlink" title="push/pop/top"></a>push/pop/top</h2><p>que.push(x); //入队，把x放到队列, O(log n)</p>
+<p>que.pop(x); //出队，删除队首元素，不返回值, O(log n)</p>
+<p>que.top();  //返回堆顶元素(优先级最高的元素)，与queue里的front()做好区分</p>
+<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><p>当优先队列中存放的是我们自己定义的结构体时</p>
+<p>方法一：重载 “&lt;”(小于号).</p>
+<pre><code class="lang-c++">struct point
+{
+    int id,x,y;
+    friend bool operator&lt;(const point &amp;a,const point &amp;b)//按照id的大小规定优先级
+    {
+        return a.id&gt;b.id;
+    }
+};
+int main()
+{
+    priority_queue&lt;point&gt; que;
+    que.push(point{2,3,1});
+    que.push(point{5,2,3});
+    que.push(point{3,2,2});
+    que.push(point{1,5,6});
+    que.push(point{4,2,4});
+    while(que.size())
+    {
+        point p = que.top();
+        que.pop();
+        cout&lt;&lt;&quot;id:&quot;&lt;&lt;p.id&lt;&lt;&quot; &quot;&lt;&lt;p.x&lt;&lt;&quot; &quot;&lt;&lt;p.y&lt;&lt;endl;
+    }
+}
+</code></pre>
+<p>方法二：重载”()”预算符</p>
+<pre><code class="lang-c++">struct point
+{
+    int id,x,y;
+};
+struct cmp1
+{
+    bool operator() (const point a,const point b) const//按照id的大小规定优先级
+    {
+        return a.id&gt;b.id;
+    }
+};
+struct cmp2
+{
+    bool operator() (const point a,const point b) const//按照x的大小规定优先级
+    {
+        return a.x&gt;b.x;
+    }
+};
+struct cmp3
+{
+    bool operator() (const point a,const point b) const//按照x+y的值规定优先级
+    {
+        return a.x+a.y&gt;b.x+b.y;
+    }
+};
+// ...
+int main()
+{
+    priority_queue&lt;point,vector&lt;point&gt;,cmp1&gt; que;
+    priority_queue&lt;point,vector&lt;point&gt;,cmp2&gt; q2;
+    priority_queue&lt;point,vector&lt;point&gt;,cmp3&gt; q3;
+    que.push(point{2,3,1});
+    que.push(point{5,2,3});
+    que.push(point{3,2,2});
+    que.push(point{1,5,6});
+    que.push(point{4,2,4});
+    while(que.size())
+    {
+        point p = que.top();
+        que.pop();
+        cout&lt;&lt;&quot;id:&quot;&lt;&lt;p.id&lt;&lt;&quot; &quot;&lt;&lt;p.x&lt;&lt;&quot; &quot;&lt;&lt;p.y&lt;&lt;endl;
+    }
+}
+</code></pre>
+<h1 id="include-lt-deque-62"><a href="#include-lt-deque-62" class="headerlink" title="#include&lt;deque&#62;"></a>#include&lt;deque&#62;</h1><h1 id="include-lt-set-62"><a href="#include-lt-set-62" class="headerlink" title="#include&lt;set&#62;"></a>#include&lt;set&#62;</h1><h1 id="include-lt-map-62"><a href="#include-lt-map-62" class="headerlink" title="#include&lt;map&#62;"></a>#include&lt;map&#62;</h1>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">

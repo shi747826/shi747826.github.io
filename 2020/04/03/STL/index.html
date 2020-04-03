@@ -382,6 +382,28 @@ int main()
     sort(a.begin(),a.end(),cmp);
 }
 </code></pre>
+<pre><code class="lang-c++">vector&lt;int&gt; v;
+v.push_back(3);
+v.push_back(2);
+v.push_back(4);
+v.push_back(1);
+v.push_back(5);
+for(auto it:v)
+    cout&lt;&lt;it&lt;&lt;&quot; &quot;;
+cout&lt;&lt;endl;
+
+cout&lt;&lt;&quot;size: &quot;&lt;&lt;v.size()&lt;&lt;endl;
+
+sort(v.begin(),v.end());//排序
+for(auto it:v)
+    cout&lt;&lt;it&lt;&lt;&quot; &quot;;
+cout&lt;&lt;endl;
+
+reverse(v.begin(),v.end());//翻转
+for(auto it:v)
+    cout&lt;&lt;it&lt;&lt;&quot; &quot;;
+cout&lt;&lt;endl;
+</code></pre>
 <h1 id="include-60-stack-gt-栈"><a href="#include-60-stack-gt-栈" class="headerlink" title="#include&#60;stack&gt; 栈"></a>#include&#60;stack&gt; 栈</h1><p>先进后出（FILO）</p>
 <h2 id="声明-1"><a href="#声明-1" class="headerlink" title="声明"></a>声明</h2><p>stack&lt;Type&#62; s; //定义栈，Type为类型，如int、double、char、string或是自己定义的结构体类型</p>
 <h2 id="push-pop"><a href="#push-pop" class="headerlink" title="push/pop"></a>push/pop</h2><p>s.push(x); //入栈，把x放到栈顶</p>
@@ -389,6 +411,7 @@ int main()
 <h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p>s.top();   //返回栈顶元素的值,但不会删除</p>
 <p>遍历栈通常先用top取到栈顶元素，然后pop出栈。</p>
 <pre><code class="lang-c++">stack&lt;int&gt; st;
+for(int i=1;i&lt;=10;i++) st.push(i);
 while(st.size())
 {
     int p = st.top();
@@ -404,6 +427,7 @@ while(st.size())
 <p>que.back(); //返回队尾元素,不会删除, O(1)</p>
 <p>遍历队列和遍历栈的方法类似，先用front取到队首元素，然后pop出队。</p>
 <pre><code>queue&lt;int&gt; que;
+for(int i=1;i&lt;=10;i++) que.push(i);
 while(que.size())
 {
     int p = que.front();

@@ -326,8 +326,90 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="include"><a href="#include" class="headerlink" title="#include "></a>#include <vector\></vector\></h1><h2 id="1-声明"><a href="#1-声明" class="headerlink" title="1.声明"></a>1.声明</h2><p>vector <int\> a;</int\></p>
-
+          <h1 id="include-60-vector-62"><a href="#include-60-vector-62" class="headerlink" title="#include &#60;vector&#62;"></a>#include &#60;vector&#62;</h1><p>Vector 包含着一系列连续存储的元素,其行为和数组类似。访问Vector中的任意元素或从末尾添加元素都可以在<strong>常量级时间复杂度</strong>( O(1) ) 内完成，而查找特定值的元素所处的位置或是在Vector中插入元素则是<strong>线性时间复杂度</strong>( O(n) )</p>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><ul>
+<li>vector &#60; int &#62; a;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 声明一个名字是a的动态数组</li>
+<li>vector &#60; int &gt; a(10); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a里有10个值为0的元素             </li>
+<li>vector &#60; int &gt; a(10,6);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a里有10个值为6的元素</li>
+<li>vector &#60; int &gt; a[MAXN];&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a是一个二维的动态数组</li>
+<li>vector &#60; MyType &gt; a;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a里存放的是MyType类型</li>
+</ul>
+<h2 id="size-empty"><a href="#size-empty" class="headerlink" title="size/empty"></a>size/empty</h2><p>size函数返回的是vector的实际长度(包含元素的个数）。调用方法 a.size();</p>
+<p>empty函数判断vector是否为空，如果为空返回 true 否则返回false。调用方法 ：a.empty();</p>
+<p><strong>STL里所有的容器都支持这两个函数，含义也都相同。</strong></p>
+<h2 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h2><p>把vector清空，a.clear()</p>
+<h2 id="push-back-pop-back"><a href="#push-back-pop-back" class="headerlink" title="push_back/pop_back"></a>push_back/pop_back</h2><p>a.push_back(x) &nbsp; 在vector a末尾添加一个元素 x.</p>
+<p>a.pop_back()&nbsp; 删除vector a的最后一个元素.</p>
+<h2 id="front-back"><a href="#front-back" class="headerlink" title="front/back"></a>front/back</h2><p>a.front()&nbsp; 返回vector a的第一个元素，相当于a[0].</p>
+<p>a.back()&nbsp;&nbsp;返回vector a的最后一个元素，相当于a[n-1] (n=a.size()).</p>
+<h2 id="erase-insert"><a href="#erase-insert" class="headerlink" title="erase/insert"></a>erase/insert</h2><p><br></p>
+<p><br></p>
+<p><br></p>
+<h2 id="begin-end"><a href="#begin-end" class="headerlink" title="begin/end"></a>begin/end</h2><p>begin函数返回指向vector中第一个元素的<strong>迭代器</strong> 。*a.begin() 与 a[0]作用相同。</p>
+<p>end函数返回vector的尾部的一个<strong>迭代器</strong>，*a.begin() 与 a[n] 相同 （n=a.size()），都是越界访问。</p>
+<h2 id="迭代器（iterator）"><a href="#迭代器（iterator）" class="headerlink" title="迭代器（iterator）"></a>迭代器（iterator）</h2><p>迭代器就像STL容器的“指针”，可以用“ * ”操作符解除引用。</p>
+<p>一个保存int类型的vector的迭代器的声明方法为：</p>
+<p>vector&#60;int&gt;::iterator it;&nbsp;&nbsp;声明了一个名字为 it 的vector迭代器</p>
+<p>vector的遍历:</p>
+<p>方法一：用迭代器遍历</p>
+<pre><code class="lang-c++">vector&lt;int&gt; a;
+for(int i=1;i&lt;=10;i++) a.push_back(i);
+vector&lt;int&gt;::iterator it;
+for(it=a.begin();it!=a.end();it++)
+    cout&lt;&lt;*it&lt;&lt;endl;
+</code></pre>
+<p>方法二：用c++11里的 auto</p>
+<pre><code class="lang-c++">vector&lt;int&gt; a;
+for(int i=1;i&lt;=10;i++) a.push_back(i);
+for(auto it:a)
+    cout&lt;&lt;it&lt;&lt;endl;
+</code></pre>
+<h2 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h2><p>reverse函数可以把vector里所有的元素倒转。时间复杂度是O(n).</p>
+<p>reverse(a.begin(),a.end());</p>
+<h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><p>对动态数组排序类似于数组</p>
+<pre><code class="lang-c++">vector&lt;int&gt; a;
+sort(a.begin(),a.end());//从小到大排序
+</code></pre>
+<p>从大到小需要重载一个cmp函数</p>
+<pre><code class="lang-c++">bool cmp(int a,int b)
+{
+    return a&gt;b;
+}
+int main()
+{
+    vector&lt;int&gt; a;
+    sort(a.begin(),a.end(),cmp);
+}
+</code></pre>
+<h1 id="include-60-stack-gt"><a href="#include-60-stack-gt" class="headerlink" title="#include&#60;stack&gt;"></a>#include&#60;stack&gt;</h1><p>先进后出（FILO）</p>
+<h2 id="声明-1"><a href="#声明-1" class="headerlink" title="声明"></a>声明</h2><p>stack&lt;Type&#62; s; //定义栈，Type为类型，如int、double、char、string或是自己定义的结构体类型</p>
+<h2 id="push-pop"><a href="#push-pop" class="headerlink" title="push/pop"></a>push/pop</h2><p>s.push(x); //入栈，把x放到栈顶</p>
+<p>s.pop(x); //出栈，删除栈顶元素，不返回值</p>
+<h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p>s.top();   //取栈顶元素,但不会删除</p>
+<p>遍历栈通常先用top取到栈顶元素，然后pop出栈。</p>
+<pre><code class="lang-c++">stack&lt;int&gt; st;
+while(st.size())
+{
+    int p = st.top();
+    st.pop();
+    cout&lt;&lt;p&lt;&lt;endl;
+}
+</code></pre>
+<h1 id="include-lt-queue-62"><a href="#include-lt-queue-62" class="headerlink" title="#include&lt;queue&#62;"></a>#include&lt;queue&#62;</h1><p>先进先出（FIFO）</p>
+<h2 id="声明-2"><a href="#声明-2" class="headerlink" title="声明"></a>声明</h2><p>queue&lt;Type&#62; que; //定义队列，Type为类型，如int、double、char、string或是自己定义的结构体类型</p>
+<h2 id="push-pop-1"><a href="#push-pop-1" class="headerlink" title="push/pop"></a>push/pop</h2><p>que.push(x); //入队，把x放到队列</p>
+<p>que.pop(x); //出队，删除队首元素，不返回值</p>
+<h2 id="front-back-1"><a href="#front-back-1" class="headerlink" title="front/back"></a>front/back</h2><p>que.front(); //返回队首元素,不会删除</p>
+<p>que.back(); //返回队尾元素,不会删除</p>
+<p>遍历队列和遍历栈的方法类似，先用front取到队首元素，然后pop出队。</p>
+<pre><code>queue&lt;int&gt; que;
+while(que.size())
+{
+    int p = que.front();
+    que.pop();
+    cout&lt;&lt;p&lt;&lt;endl;
+}
+</code></pre><h1 id="优先队列priority-queue"><a href="#优先队列priority-queue" class="headerlink" title="优先队列priority_queue"></a>优先队列priority_queue</h1><h1 id="include-lt-deque-62"><a href="#include-lt-deque-62" class="headerlink" title="#include&lt;deque&#62;"></a>#include&lt;deque&#62;</h1><h1 id="include-lt-set-62"><a href="#include-lt-set-62" class="headerlink" title="#include&lt;set&#62;"></a>#include&lt;set&#62;</h1><h1 id="include-lt-map-62"><a href="#include-lt-map-62" class="headerlink" title="#include&lt;map&#62;"></a>#include&lt;map&#62;</h1>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">

@@ -441,7 +441,7 @@ while(que.size())
 <h2 id="push-pop-top"><a href="#push-pop-top" class="headerlink" title="push/pop/top"></a>push/pop/top</h2><p>que.push(x); //入队，把x放到队列, O(log n)</p>
 <p>que.pop(); //出队，删除队首元素，不返回值, O(log n)</p>
 <p>que.top();  //返回堆顶元素(优先级最高的元素)，与queue里的front()做好区分</p>
-<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><p>当优先队列中存放的是我们自己定义的结构体时</p>
+<h2 id="结构体优先队列"><a href="#结构体优先队列" class="headerlink" title="结构体优先队列"></a>结构体优先队列</h2><p>当优先队列中存放的是我们自己定义的结构体时</p>
 <p>方法一：重载 “&lt;”(小于号).</p>
 <pre><code class="lang-c++">struct point
 {
@@ -512,7 +512,9 @@ int main()
     }
 }
 </code></pre>
-<h1 id="include-lt-deque-62-双端队列"><a href="#include-lt-deque-62-双端队列" class="headerlink" title="#include&lt;deque&#62; 双端队列"></a>#include&lt;deque&#62; 双端队列</h1><h1 id="include-lt-set-62-集合"><a href="#include-lt-set-62-集合" class="headerlink" title="#include&lt;set&#62; 集合"></a>#include&lt;set&#62; 集合</h1><h1 id="include-lt-map-62-映射"><a href="#include-lt-map-62-映射" class="headerlink" title="#include&lt;map&#62; 映射"></a>#include&lt;map&#62; 映射</h1>
+<h1 id="include-lt-deque-62-双端队列"><a href="#include-lt-deque-62-双端队列" class="headerlink" title="#include&lt;deque&#62; 双端队列"></a>#include&lt;deque&#62; 双端队列</h1><p>双端队列 deque 是一个支持在两端高效插入或删除元素的连续线性存储空间。它就像是vector和queue的结合。与 vector 相比，deque在头部增删元素只需要 O(1) 的时间；与 queue 相比，deque可以像数组一样支持随机访问。</p>
+<p><img src="/2020/04/03/STL/deque.jpg" alt></p>
+<h1 id="include-lt-set-62-集合"><a href="#include-lt-set-62-集合" class="headerlink" title="#include&lt;set&#62; 集合"></a>#include&lt;set&#62; 集合</h1><h1 id="include-lt-map-62-映射"><a href="#include-lt-map-62-映射" class="headerlink" title="#include&lt;map&#62; 映射"></a>#include&lt;map&#62; 映射</h1>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">

@@ -334,20 +334,20 @@
 <li>vector &#60; int &gt; a[MAXN];&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a是一个二维的动态数组</li>
 <li>vector &#60; MyType &gt; a;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a里存放的是MyType类型</li>
 </ul>
-<h2 id="size-empty"><a href="#size-empty" class="headerlink" title="size/empty"></a>size/empty</h2><p>size函数返回的是vector的实际长度(包含元素的个数）。调用方法 a.size();</p>
-<p>empty函数判断vector是否为空，如果为空返回 true 否则返回false。调用方法 ：a.empty();</p>
+<h2 id="size-empty"><a href="#size-empty" class="headerlink" title="size/empty"></a>size/empty</h2><p>size函数返回的是vector的实际长度(包含元素的个数）。调用方法 <code>a.size();</code></p>
+<p>empty函数判断vector是否为空，如果为空返回 true 否则返回false。调用方法 ：<code>a.empty();</code></p>
 <p><strong>STL里所有的容器都支持这两个函数，含义也都相同。</strong></p>
-<h2 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h2><p>把vector清空，a.clear()</p>
-<h2 id="push-back-pop-back"><a href="#push-back-pop-back" class="headerlink" title="push_back/pop_back"></a>push_back/pop_back</h2><p>a.push_back(x) &nbsp; 在vector a末尾添加一个元素 x.</p>
-<p>a.pop_back()&nbsp; 删除vector a的最后一个元素.</p>
-<h2 id="front-back"><a href="#front-back" class="headerlink" title="front/back"></a>front/back</h2><p>a.front()&nbsp; 返回vector a的第一个元素，相当于a[0].</p>
-<p>a.back()&nbsp;&nbsp;返回vector a的最后一个元素，相当于a[n-1] (n=a.size()).</p>
+<h2 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h2><p>把vector清空，<code>a.clear();</code></p>
+<h2 id="push-back-pop-back"><a href="#push-back-pop-back" class="headerlink" title="push_back/pop_back"></a>push_back/pop_back</h2><p><code>a.push_back(x)</code> &nbsp; 在vector a末尾添加一个元素 x.</p>
+<p><code>a.pop_back()</code>&nbsp; 删除vector a的最后一个元素.</p>
+<h2 id="front-back"><a href="#front-back" class="headerlink" title="front/back"></a>front/back</h2><p><code>a.front()</code>&nbsp; 返回vector a的第一个元素，相当于a[0].</p>
+<p><code>a.back()</code>&nbsp;&nbsp;返回vector a的最后一个元素，相当于a[n-1] (n=a.size()).</p>
 <h2 id="insert-erase"><a href="#insert-erase" class="headerlink" title="insert/erase"></a>insert/erase</h2><p>插入和删除操作的时间复杂度都是O(n)，比较低效，不经常用。</p>
 <h2 id="begin-end"><a href="#begin-end" class="headerlink" title="begin/end"></a>begin/end</h2><p>begin函数返回指向vector中第一个元素的<strong>迭代器</strong> 。*a.begin() 与 a[0]作用相同。</p>
 <p>end函数返回vector的尾部的一个<strong>迭代器</strong>，*a.begin() 与 a[n] 相同 （n=a.size()），都是越界访问。</p>
 <h2 id="迭代器（iterator）"><a href="#迭代器（iterator）" class="headerlink" title="迭代器（iterator）"></a>迭代器（iterator）</h2><p>迭代器就像STL容器的“指针”，可以用“ * ”操作符解除引用。</p>
 <p>一个保存int类型的vector的迭代器的声明方法为：</p>
-<p>vector&#60;int&gt;::iterator it;&nbsp;&nbsp;声明了一个名字为 it 的vector迭代器</p>
+<p><code>vector&amp;#60;int&gt;::iterator it;</code>&nbsp;&nbsp;声明了一个名字为 it 的vector迭代器</p>
 <p>vector的遍历:</p>
 <p>方法一：用迭代器遍历</p>
 <pre><code class="lang-c++">vector&lt;int&gt; a;
@@ -363,7 +363,7 @@ for(auto it:a)
     cout&lt;&lt;it&lt;&lt;endl;
 </code></pre>
 <h2 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h2><p>reverse函数可以把vector里所有的元素倒转。时间复杂度是O(n).</p>
-<p>reverse(a.begin(),a.end());</p>
+<p><code>reverse(a.begin(),a.end());</code></p>
 <h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><p>对动态数组排序类似于数组</p>
 <pre><code class="lang-c++">vector&lt;int&gt; a;
 sort(a.begin(),a.end());//从小到大排序
@@ -402,10 +402,10 @@ for(auto it:v)
 cout&lt;&lt;endl;
 </code></pre>
 <h1 id="include-60-stack-gt-栈"><a href="#include-60-stack-gt-栈" class="headerlink" title="#include&#60;stack&gt; 栈"></a>#include&#60;stack&gt; 栈</h1><p>先进后出（FILO）</p>
-<h2 id="声明-1"><a href="#声明-1" class="headerlink" title="声明"></a>声明</h2><p>stack&lt;Type&#62; s; //定义栈，Type为类型，如int、double、char、string或是自己定义的结构体类型</p>
-<h2 id="push-pop"><a href="#push-pop" class="headerlink" title="push/pop"></a>push/pop</h2><p>s.push(x); //入栈，把x放到栈顶</p>
-<p>s.pop(); //出栈，删除栈顶元素，不返回值</p>
-<h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p>s.top();   //返回栈顶元素的值,但不会删除</p>
+<h2 id="声明-1"><a href="#声明-1" class="headerlink" title="声明"></a>声明</h2><p><code>stack&lt;Type&amp;#62; s;</code> //定义栈，Type为类型，如int、double、char、string或是自己定义的结构体类型</p>
+<h2 id="push-pop"><a href="#push-pop" class="headerlink" title="push/pop"></a>push/pop</h2><p><code>s.push(x);</code> //入栈，把x放到栈顶</p>
+<p><code>s.pop();</code> //出栈，删除栈顶元素，不返回值</p>
+<h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p><code>s.top();</code>  //返回栈顶元素的值,但不会删除</p>
 <p>遍历栈通常先用top取到栈顶元素，然后pop出栈。</p>
 <pre><code class="lang-c++">stack&lt;int&gt; st;
 for(int i=1;i&lt;=10;i++) st.push(i);
@@ -417,11 +417,11 @@ while(st.size())
 }
 </code></pre>
 <h1 id="include-lt-queue-62-队列"><a href="#include-lt-queue-62-队列" class="headerlink" title="#include&lt;queue&#62; 队列"></a>#include&lt;queue&#62; 队列</h1><p>先进先出（FIFO）</p>
-<h2 id="声明-2"><a href="#声明-2" class="headerlink" title="声明"></a>声明</h2><p>queue&lt;Type&#62; que; //定义队列，Type为类型，如int、double、char、string或是自己定义的结构体类型</p>
-<h2 id="push-pop-1"><a href="#push-pop-1" class="headerlink" title="push/pop"></a>push/pop</h2><p>que.push(x); //入队，把x放到队列, O(1)</p>
-<p>que.pop(); //出队，删除队首元素，不返回值, O(1)</p>
-<h2 id="front-back-1"><a href="#front-back-1" class="headerlink" title="front/back"></a>front/back</h2><p>que.front(); //返回队首元素,不会删除, O(1)</p>
-<p>que.back(); //返回队尾元素,不会删除, O(1)</p>
+<h2 id="声明-2"><a href="#声明-2" class="headerlink" title="声明"></a>声明</h2><p><code>queue&lt;Type&amp;#62; que;</code>//定义队列，Type为类型，如int、double、char、string或是自己定义的结构体类型</p>
+<h2 id="push-pop-1"><a href="#push-pop-1" class="headerlink" title="push/pop"></a>push/pop</h2><p><code>que.push(x);</code>//入队，把x放到队列, O(1)</p>
+<p><code>que.pop();</code> //出队，删除队首元素，不返回值, O(1)</p>
+<h2 id="front-back-1"><a href="#front-back-1" class="headerlink" title="front/back"></a>front/back</h2><p><code>que.front();</code>//返回队首元素,不会删除, O(1)</p>
+<p><code>que.back();</code>//返回队尾元素,不会删除, O(1)</p>
 <p>遍历队列和遍历栈的方法类似，先用front取到队首元素，然后pop出队。</p>
 <pre><code>queue&lt;int&gt; que;
 for(int i=1;i&lt;=10;i++) que.push(i);
@@ -438,9 +438,9 @@ while(que.size())
 <li>priority_queue&lt;int,vector&lt;int&#62;,less&lt;int&#62; &nbsp;&#62; que; 与默认的相同</li>
 <li>priority_queue&lt;int,vector&lt;int&#62;,greater&lt;int&#62; &nbsp;&#62;  que;//最小值优先级队列</li>
 </ul>
-<h2 id="push-pop-top"><a href="#push-pop-top" class="headerlink" title="push/pop/top"></a>push/pop/top</h2><p>que.push(x); //入队，把x放到队列, O(log n)</p>
-<p>que.pop(); //出队，删除队首元素，不返回值, O(log n)</p>
-<p>que.top();  //返回堆顶元素(优先级最高的元素)，与queue里的front()做好区分</p>
+<h2 id="push-pop-top"><a href="#push-pop-top" class="headerlink" title="push/pop/top"></a>push/pop/top</h2><p><code>que.push(x);</code> //入队，把x放到队列, O(log n)</p>
+<p><code>que.pop();</code>//出队，删除队首元素，不返回值, O(log n)</p>
+<p><code>que.top();</code>//返回堆顶元素(优先级最高的元素)，与queue里的front()做好区分</p>
 <h2 id="结构体优先队列"><a href="#结构体优先队列" class="headerlink" title="结构体优先队列"></a>结构体优先队列</h2><p>当优先队列中存放的是我们自己定义的结构体时</p>
 <p>方法一：重载 “&lt;”(小于号).</p>
 <pre><code class="lang-c++">struct point
@@ -467,7 +467,7 @@ int main()
     }
 }
 </code></pre>
-<p>方法二：重载”()”预算符</p>
+<p>方法二：重载”()”运算符</p>
 <pre><code class="lang-c++">struct point
 {
     int id,x,y;
@@ -514,7 +514,41 @@ int main()
 </code></pre>
 <h1 id="include-lt-deque-62-双端队列"><a href="#include-lt-deque-62-双端队列" class="headerlink" title="#include&lt;deque&#62; 双端队列"></a>#include&lt;deque&#62; 双端队列</h1><p>双端队列 deque 是一个支持在两端高效插入或删除元素的连续线性存储空间。它就像是vector和queue的结合。与 vector 相比，deque在头部增删元素只需要 O(1) 的时间；与 queue 相比，deque可以像数组一样支持随机访问。</p>
 <p><img src="/2020/04/03/STL/deque.jpg" alt></p>
-<h1 id="include-lt-set-62-集合"><a href="#include-lt-set-62-集合" class="headerlink" title="#include&lt;set&#62; 集合"></a>#include&lt;set&#62; 集合</h1><h1 id="include-lt-map-62-映射"><a href="#include-lt-map-62-映射" class="headerlink" title="#include&lt;map&#62; 映射"></a>#include&lt;map&#62; 映射</h1>
+<h1 id="include-lt-set-62-集合"><a href="#include-lt-set-62-集合" class="headerlink" title="#include&lt;set&#62; 集合"></a>#include&lt;set&#62; 集合</h1><p>头文件 set 主要包括 set 和 multiset 两个容器。两个容器都是有序的，即存入容器就自动排序。</p>
+<p>set 容器里的元素不能重复，multiset容器允许重复。两者内部都是用红黑树实现的，所支持的函数基本相同。</p>
+<h2 id="声明-4"><a href="#声明-4" class="headerlink" title="声明"></a>声明</h2><ul>
+<li>set&lt;int&#62; s;</li>
+<li>set&lt;string&#62; s;</li>
+<li>multiset&lt;double&#62; s;</li>
+<li>set&lt;MyType&#62; s; // 集合里存放的是自定义的数据类型</li>
+</ul>
+<p>因为set和multiset容器里存放的元素是有序的，所以当我们存放自己定义的结构体的时候，需要和优先队列一样，重载 ‘&lt;’ (小于号)运算符。</p>
+<h2 id="size-empty-clear"><a href="#size-empty-clear" class="headerlink" title="size/empty/clear"></a>size/empty/clear</h2><p>与 vector 类似。</p>
+<h2 id="insert-erase-count"><a href="#insert-erase-count" class="headerlink" title="insert/erase/count"></a>insert/erase/count</h2><p><code>s.insert(x);</code> //把一个元素 x 插入到 s 中，时间复杂度是 O(log n)。</p>
+<p><code>s.erase(it);</code> // it 是一个迭代器，从 s 中删除迭代器 it 指向的元素，时间复杂度是 O(log n)。</p>
+<p><code>s.erase(x);</code> // x 是一个元素，从 s 中删除所有等于 x 的元素，时间复杂度是 O(k + log n)，k是被删掉元素的个数</p>
+<p><code>s.count(x);</code>// 返回从 s 中所有等于 x 的元素个数。时间复杂度是 O(k + log n)，k是元素x的个数。</p>
+<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p><code>s.find(x);</code>// 在集合 s 中查找等于 x 的元素，返回指向该元素的迭代器。如果不存在x，则返回s.end()。时间复杂度是 O(log n)。</p>
+<h2 id="lower-bound-upper-bound"><a href="#lower-bound-upper-bound" class="headerlink" title="lower_bound/upper_bound"></a>lower_bound/upper_bound</h2><p>这两个函数的用法和 find 类似。查找条件有一点不同，时间复杂度是 O(log n)。</p>
+<p><code>s.lower_bound(x);</code>//查找<strong>大于等于</strong> x 的元素中最小的一个，并返回指向该元素的迭代器。</p>
+<p><code>s.upper_bound(x);</code>//查找<strong>大于</strong> x 的元素中最小的一个，并返回指向该元素的迭代器。</p>
+<h1 id="include-lt-map-62-映射"><a href="#include-lt-map-62-映射" class="headerlink" title="#include&lt;map&#62; 映射"></a>#include&lt;map&#62; 映射</h1><p>map容器是一个键值对 key-value 的映射，也是基于红黑树实现的，所以map的大部分操作的时间复杂度都是O(log n)。</p>
+<h2 id="声明-5"><a href="#声明-5" class="headerlink" title="声明"></a>声明</h2><p><code>map&lt;key_type,value_type&gt; mp;</code></p>
+<p>例如：</p>
+<ul>
+<li>map&lt;int,int&#62;  mp;</li>
+<li>map&lt;string,int&#62;  mp;</li>
+<li>map&lt;long long,bool&#62;  mp;</li>
+<li>map&lt; pait&lt;int,int&#62; ,vector&lt;int&#62;  &#62; mp;</li>
+</ul>
+<p>如果map里的key_type类型是自定义的结构体类型，必须重载 ‘&lt;’ (小于号)运算符。</p>
+<h2 id="操作符"><a href="#操作符" class="headerlink" title="[ ] 操作符"></a>[ ] 操作符</h2><p>map常用的就这一个操作符。</p>
+<p>例如根据学生姓名找对应学号的问题。</p>
+<p>我们只需要定义一个key是string，value是int的映射。 <code>map&lt;string,int&gt; sno;</code></p>
+<p>起初标记的时候可以这样写：<code>sno[&quot;张三&quot;] = 10001；</code></p>
+<p>当我们需要 “张三” 的学号时就可以直接使用 <code>sno[&quot;张三&quot;]</code></p>
+<h1 id="unordered-map"><a href="#unordered-map" class="headerlink" title="unordered_map"></a>unordered_map</h1><p>unordered_map 是基于 Hash 的容器，所以时间复杂度是O(1)。略快于传统的 map 。使用方法和 map 基本相同。</p>
+
         </div>
         <!-- .entry-content -->
         <div class="single-reward">

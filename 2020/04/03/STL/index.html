@@ -344,7 +344,7 @@
 <p><code>a.back()</code>&nbsp;&nbsp;返回vector a的最后一个元素，相当于a[n-1] (n=a.size()).</p>
 <h2 id="insert-erase"><a href="#insert-erase" class="headerlink" title="insert/erase"></a>insert/erase</h2><p>插入和删除操作的时间复杂度都是O(n)，比较低效，不经常用。</p>
 <h2 id="begin-end"><a href="#begin-end" class="headerlink" title="begin/end"></a>begin/end</h2><p>begin函数返回指向vector中第一个元素的<strong>迭代器</strong> 。*a.begin() 与 a[0]作用相同。</p>
-<p>end函数返回vector的尾部的一个<strong>迭代器</strong>，*a.begin() 与 a[n] 相同 （n=a.size()），都是越界访问。</p>
+<p>end函数返回vector的尾部的一个<strong>迭代器</strong>，*a.end() 与 a[n] 相同 （n=a.size()），都是越界访问。</p>
 <h2 id="迭代器（iterator）"><a href="#迭代器（iterator）" class="headerlink" title="迭代器（iterator）"></a>迭代器（iterator）</h2><p>迭代器就像STL容器的“指针”，可以用“ * ”操作符解除引用。</p>
 <p>一个保存int类型的vector的迭代器的声明方法为：</p>
 <p><code>vector&lt;int&gt;::iterator it;</code>&nbsp;&nbsp;声明了一个名字为 it 的vector迭代器</p>
@@ -403,7 +403,7 @@ for(auto it:v)
 cout&lt;&lt;endl;
 </code></pre>
 <h1 id="include-60-stack-gt-栈"><a href="#include-60-stack-gt-栈" class="headerlink" title="#include&#60;stack&gt; 栈"></a>#include&#60;stack&gt; 栈</h1><p>先进后出（FILO）</p>
-<h2 id="声明-1"><a href="#声明-1" class="headerlink" title="声明"></a>声明</h2><p><code>stack&lt;Type&gt;; s;</code> //定义栈，Type为类型，如int、double、char、string或是自己定义的结构体类型</p>
+<h2 id="声明-1"><a href="#声明-1" class="headerlink" title="声明"></a>声明</h2><p><code>stack&lt;Type&gt; s;</code> //定义栈，Type为类型，如int、double、char、string或是自己定义的结构体类型</p>
 <h2 id="push-pop"><a href="#push-pop" class="headerlink" title="push/pop"></a>push/pop</h2><p><code>s.push(x);</code> //入栈，把x放到栈顶</p>
 <p><code>s.pop();</code> //出栈，删除栈顶元素，不返回值</p>
 <h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p><code>s.top();</code>  //返回栈顶元素的值,但不会删除</p>

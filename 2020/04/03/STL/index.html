@@ -362,8 +362,10 @@ for(int i=1;i&lt;=10;i++) a.push_back(i);
 for(auto it:a)
     cout&lt;&lt;it&lt;&lt;endl;
 </code></pre>
-<h2 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h2><p>reverse函数可以把vector里所有的元素倒转。时间复杂度是O(n).</p>
+<h2 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h2><p>reverse函数的头文件是#include&lt;algorithm&#62;</p>
+<p>reverse函数可以把vector里所有的元素倒置。时间复杂度是O(n).</p>
 <p><code>reverse(a.begin(),a.end());</code></p>
+<p>reverse函数也可以用来倒置string字符串。</p>
 <h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><p>对动态数组排序类似于数组</p>
 <pre><code class="lang-c++">vector&lt;int&gt; a;
 sort(a.begin(),a.end());//从小到大排序

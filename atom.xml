@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https:shi747826.github.io/"/>
-  <updated>2020-04-06T12:59:40.736Z</updated>
+  <updated>2020-04-09T09:40:14.455Z</updated>
   <id>https:shi747826.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Codeforces Round #632 (Div. 2) C</title>
+    <link href="https:shi747826.github.io/2020/04/09/Codeforces-Round-632-Div-2-C/"/>
+    <id>https:shi747826.github.io/2020/04/09/Codeforces-Round-632-Div-2-C/</id>
+    <published>2020-04-09T09:06:11.000Z</published>
+    <updated>2020-04-09T09:40:14.455Z</updated>
+    
+    <summary type="html">
+    
+      div2只配过A，再掉分就变灰了。 T T
+    
+    </summary>
+    
+      <category term="算法" scheme="https:shi747826.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="codeforces" scheme="https:shi747826.github.io/tags/codeforces/"/>
+    
+  </entry>
   
   <entry>
     <title>STL</title>
@@ -439,30 +459,6 @@
       <category term="MST" scheme="https:shi747826.github.io/tags/MST/"/>
     
       <category term="kruskal" scheme="https:shi747826.github.io/tags/kruskal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Prim模板</title>
-    <link href="https:shi747826.github.io/2019/11/19/Prim%E6%A8%A1%E6%9D%BF/"/>
-    <id>https:shi747826.github.io/2019/11/19/Prim模板/</id>
-    <published>2019-11-19T00:56:06.000Z</published>
-    <updated>2020-01-26T04:32:17.785Z</updated>
-    
-    <summary type="html">
-    
-      板子
-    
-    </summary>
-    
-      <category term="笔记" scheme="https:shi747826.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="板子" scheme="https:shi747826.github.io/tags/%E6%9D%BF%E5%AD%90/"/>
-    
-      <category term="MST" scheme="https:shi747826.github.io/tags/MST/"/>
-    
-      <category term="Prim" scheme="https:shi747826.github.io/tags/Prim/"/>
     
   </entry>
   

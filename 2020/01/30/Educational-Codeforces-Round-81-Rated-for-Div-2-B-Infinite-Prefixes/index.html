@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">Educational Codeforces Round 81 (Rated for Div. 2) B. Infinite Prefixes | SQRock</title>
+  
+    <link rel="shortcut icon" href="/images/头像.jpg">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "SQ_Rock";
+  mashiro_option.author_name = "";
+  mashiro_option.site_url = "https://www.shi747826.com";
+  mashiro_option.v_appId = "UxYfusXUbSO4XIT105k8RsWo-gzGzoHsz";
+  mashiro_option.v_appKey = "Qcqav1HXc6Afma8BAuuFY9LA";
+  mashiro_option.mathjax = "[object Object]";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/shi747826/cdn@1.3/cover/1.jpg,https://cdn.jsdelivr.net/gh/shi747826/cdn@1.3/cover/2.jpg,https://cdn.jsdelivr.net/gh/shi747826/cdn@1.3/cover/3.jpg,https://cdn.jsdelivr.net/gh/shi747826/cdn@1.3/cover/4.jpg,https://cdn.jsdelivr.net/gh/shi747826/cdn@1.3/cover/5.jpg".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+</html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://www.shi747826.com">
+          <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/头像.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>Live your life with passion! With some drive!</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/shi747826" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://music.163.com/#/user/home?id=544257352" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/social/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="mailto:188250173@qq.com" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/social/email.svg">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://wpa.qq.com/msgrd?v=3&amp;uin=188250173&amp;site=qq&amp;menu=yes" target="_blank" class="social-github" title="qq">
+                    <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/social/qq.png">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">SQ_Rock</span>
+            <span class="shironeko"></span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/算法/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          算法
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/笔记/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          笔记
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/资源/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-headphones" aria-hidden="true"></i>
+                    歌单
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/about/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-meetup" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/lab/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-cogs" aria-hidden="true"></i>
+                    实验室
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3435.GIF);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3435.GIF">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Educational Codeforces Round 81 (Rated for Div. 2) B. Infinite Prefixes</h1>
+      <p class="entry-census">
+        <span>
+          <a href="https://www.shi747826.com">
+            <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.1/images/头像.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="https://www.shi747826.com">SQRock</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2020-1-30<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="B-Infinite-Prefixes"><a href="#B-Infinite-Prefixes" class="headerlink" title="B. Infinite Prefixes"></a><a href="https://codeforces.com/contest/1295/problem/B" target="_blank" rel="noopener">B. Infinite Prefixes</a></h1><p>You are given string <strong><em>s</em></strong> of length <strong><em>n</em></strong> consisting of 0-s and 1-s. You build an infinite string <strong><em>t</em></strong> as a concatenation of an infinite number of strings <strong><em>s</em></strong>, or <strong><em>t</em></strong> = <strong><em>ssss…</em></strong> For example, if s = <code>10010</code>, then t= <code>100101001010010...</code></p>
+<p>Calculate the number of prefixes of <strong><em>t</em></strong> with <em>balance</em> equal to <strong><em>x</em></strong>. The balance of some string <strong><em>q</em></strong> is equal to <strong><em>cnt<sub>0,q</sub></em></strong> − <strong><em>cnt<sub>1,q</sub></em></strong>, where <strong><em>cnt<sub>0,q</sub></em></strong> is the number of occurrences of 0 in <strong><em>q</em></strong>, and <strong><em>cnt<sub>1,q</sub></em></strong> is the number of occurrences of 1 in <strong><em>q</em></strong>. The number of such prefixes can be infinite; if it is so, you must say that.</p>
+<p>A prefix is a string consisting of several first letters of a given string, without any reorders. An empty prefix is also a valid prefix. For example, the string “<code>abcd</code>“ has 5 prefixes: empty string, “<code>a</code>“, “<code>ab</code>“, “<code>abc</code>“ and “<code>abcd</code>“.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h2><p>The first line contains the single integer <strong><em>T (1 ≤ T ≤ 100)</em></strong>— the number of test cases.</p>
+<p>Next <strong><em>2T</em></strong> lines contain descriptions of test cases — two lines per test case. The first line contains two integers <strong><em>n</em></strong> and <strong><em>x (1 ≤ n ≤ 10<sup>5</sup>, −10<sup>9</sup> ≤ x ≤ 10<sup>9</sup>)</em></strong> — the length of string <strong><em>s</em></strong> and the desired balance, respectively.</p>
+<p>The second line contains the binary string <strong><em>s (|s| = n, s<sub>i</sub> ∈ {0,1})</em></strong>.</p>
+<p>It’s guaranteed that the total sum of <strong><em>n</em></strong> doesn’t exceed <strong><em>10<sup>5</sup></em></strong>.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>Print  <strong><em>T</em></strong> integers — one per test case. For each test case print the number of prefixes or −1 if there is an infinite number of such prefixes.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><pre><code>4
+6 10
+010010
+5 3
+10101
+1 0
+0
+2 0
+01
+</code></pre><h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><pre><code>3
+0
+1
+-1
+</code></pre><h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>In the first test case, there are 3 good prefixes of <strong><em>t</em></strong>: with length <strong><em>28</em></strong>, <strong><em>30</em></strong> and <strong><em>32</em></strong>.</p>
+<h1 id="Problem-solving"><a href="#Problem-solving" class="headerlink" title="Problem solving:"></a>Problem solving:</h1><p>这场cf全是字符串，直接自闭。</p>
+<p><img src="/2020/01/30/Educational-Codeforces-Round-81-Rated-for-Div-2-B-Infinite-Prefixes/1.jpg" alt></p>
+<p>题目意思是给你一个<code>01</code>字符串，然后这个字符串可以无限叠加。例如<code>010010</code>可以变成<code>010010 010010</code>、<code>010010 010010 010010 010010 010010</code>（串中没有空格） … 。然后找这个无限字符串的前缀，前缀0的个数减去1的个数等于<strong><em>x</em></strong>。问有多少种符合的前缀。</p>
+<p>因为<strong><em>x</em></strong>有正负之分，需要判断的太多了，然后就把自己绕进去了。看了别人的代码后才知道可以先把负数的 <strong><em>x</em></strong> 变成正数，然后把原串01对换，这样就只需要判断正数的<strong><em>x</em></strong>了。</p>
+<p>把原串  <strong><em>cnt<sub>0,q</sub></em></strong> −  <strong><em>cnt<sub>1,q</sub></em></strong>  记为  <strong><em>num</em></strong>。</p>
+<p>因为串是无穷的，所以会出现有无穷多个解的情况。当原串 <strong><em>num</em></strong>  等于 <strong><em>0</em></strong> ，原串前缀的<strong><em>cnt<sub>0,q</sub></em></strong> −  <strong><em>cnt<sub>1,q</sub></em></strong>等于<strong><em>x</em></strong> 时，答案就有无穷多个。输出 <strong><em>-1</em></strong></p>
+<p>当  <strong><em>num</em></strong>  不为 <strong><em>0</em></strong> 时</p>
+<p>我用一个数组<strong><em>a</em></strong>记录原串中前缀当前位置的 <strong><em>cnt<sub>0,i</sub></em></strong> −  <strong><em>cnt<sub>1,i</sub></em></strong>  ,如下表所示：</p>
+<p><strong><em>s =</em></strong> <code>010010</code> , <strong><em>x = 10</em></strong></p>
+<p><img src="/2020/01/30/Educational-Codeforces-Round-81-Rated-for-Div-2-B-Infinite-Prefixes/2.jpg" alt></p>
+<p>然后遍历这个数组，当 <strong><em>( x - a[i] ) % num == 0 &amp;&amp; ( x - a[i] ) / num &gt;= 0 ）</em></strong> 时 答案<strong><em>ans</em></strong>就<strong><em>+1</em></strong>；</p>
+<p>如表中 下标为<strong>2</strong>时 ，a[1] = 0，<strong><em>( x - a[i] ) % num == 0</em></strong>；  <strong><em>( x - a[i] ) / num = 5</em></strong> 。说明前缀包含了五个原串中，再加上第六个原串的前两个就可以满足   <strong><em>cnt<sub>0,q</sub></em></strong> −  <strong><em>cnt<sub>1,q</sub>  =  10</em></strong>   当前位置为 <strong>5 * 6 + 2</strong> 即 <strong>32</strong>。</p>
+<p>当下标为<strong>4</strong>时， <strong><em>( x - a[i] ) / num = 4</em></strong> ，我们可以得到在位置 <strong>4 * 6 + 4</strong>  即 <strong>28</strong> 处找到解。</p>
+<p>当下标为<strong>6</strong>时， <strong><em>( x - a[i] ) / num = 4</em></strong> ，我们可以得到在位置 <strong>4 * 6 + 6</strong>  即 <strong>30</strong> 处找到解。</p>
+<p>符合样例一。</p>
+<p>AC代码：</p>
+<pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
+#define fi        first
+#define se        second
+#define PI        acos(-1)
+#define LC(a)     ((a&lt;&lt;1))
+#define RC(a)     ((a&lt;&lt;1)+1)
+#define MID(a,b)  ((a+b)&gt;&gt;1)
+#define mem(a, b) memset(a, b, sizeof(a))
+#define IOS()     std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)
+using namespace std;
+typedef long long ll;
+typedef unsigned long long ULL;
+typedef pair&lt;int,int&gt; PII;
+typedef pair&lt;ll,ll&gt;   PLL;
+typedef pair&lt;ll,int&gt;  PLI;
+const int INF = 0X3F3F3F3F;
+const int MIN = -(1&lt;&lt;30);
+const ll N = 1e6+7;
+ll a[N];
+int main()
+{
+    IOS();
+    int t;
+    cin&gt;&gt;t;
+    while(t--)
+    {
+        ll n,x;
+        string s;
+        cin&gt;&gt;n&gt;&gt;x&gt;&gt;s;
+        if(x&lt;0)
+        {
+            x=-x;
+            for(int i=0; i&lt;n; i++)
+                s[i]=s[i]==&#39;0&#39;?&#39;1&#39;:&#39;0&#39;;
+        }
+//        cout&lt;&lt;s&lt;&lt;endl;
+        ll num=0;
+        for(int i=0; i&lt;s.size(); i++)
+        {
+            if(s[i]==&#39;0&#39;) num++;
+            else num--;
+            a[i]=num;
+        }
+        ll ans=0;
+        int flag = 0;
+
+        if(num==0)
+        {
+            for(int i=0; i&lt;n; i++)
+            {
+                if(a[i]==x) flag=1;
+            }
+        }
+        else
+        {
+            for(int i=0; i&lt;n; i++)
+            {
+                if((x-a[i])%num==0 &amp;&amp; (x-a[i])/num&gt;=0) ans++;
+            }
+        }
+        if(x==0) ans++;
+        if(flag) cout&lt;&lt;-1&lt;&lt;endl;
+        else cout&lt;&lt;ans&lt;&lt;endl;
+
+    }
+    return 0;
+}
+</code></pre>
+<p>补题过程中我输出 -1 用了 puts,导致了不断地  <code>Wrong answer on test 4</code>  ，百度后才知道 关闭同步流 (<code>std::ios::sync_with_stdio(false)</code> )之后,不能再使用 scanf 、printf、gets、puts …。昨天有一道题换行用了<code>endl</code>也导致了wa，改用 ‘\n’ 就 ac,难受了我好长时间。我决定以后慢慢地放弃cin、cout。 虽然它很香。</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/donate/alipay.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/donate/wechatpay.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/02/12/2020牛客寒假算法基础集训营4-C-子段乘积/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3436.GIF" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3436.GIF">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                2020牛客寒假算法基础集训营4 C-子段乘积</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2020/01/28/Codeforces-Round-608-Div-2-B-Blocks/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3434.GIF" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3434.GIF">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Codeforces Round #608 (Div. 2) B. Blocks</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "UxYfusXUbSO4XIT105k8RsWo-gzGzoHsz",
+        appKey: "Qcqav1HXc6Afma8BAuuFY9LA",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="https://www.shi747826.com" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.1/images/头像.jpg" itemprop="image" alt="SQRock" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="https://www.shi747826.com" itemprop="url" rel="author">SQRock</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 SQRock<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2020 SQRock</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span><a href="http://www.beian.miit.gov.cn/">豫ICP备20003442号</a></br></span>
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo</a>
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/头像.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">SQ_Rock</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/shi747826" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=188250173&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/算法/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  算法
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/生活/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/笔记/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  笔记
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/资源/">
+                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                  资源
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/music/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-headphones" aria-hidden="true"></i>
+            歌单
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/about/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-meetup" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/lab/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-cogs" aria-hidden="true"></i>
+            实验室
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+    id="2899869488"
+
+    server="netease"
+
+    type="playlist"
+
+    fixed="true"
+
+    autoplay="false"
+
+    loop="all"
+
+    order="random"
+
+    preload="auto"
+
+    volume="0.7"
+
+    mutex="true"
+
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

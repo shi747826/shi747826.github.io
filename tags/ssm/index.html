@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Codeforces Round #638 (Div. 2) | SQRock</title>
+  <title itemprop="name">Tag: ssm | SQRock</title>
   
     <link rel="shortcut icon" href="/images/头像.jpg">
   
@@ -290,389 +290,64 @@
   </div>
 </header>
 
-      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+      
 <div class="pattern-center-blank"></div>
-
-  <div class="pattern-center single-center">
-    <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3450.GIF);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3450.GIF">
-    </div>
-    <header class="pattern-header single-header">
-      <h1 class="entry-title">
-      Codeforces Round #638 (Div. 2)</h1>
-      <p class="entry-census">
-        <span>
-          <a href="https://www.shi747826.com">
-            <img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.1/images/头像.jpg">
-          </a>
-        </span>
-        <span>
-          <a href="https://www.shi747826.com">SQRock</a>
-        </span>
-        <span class="bull">
-        ·</span>
-        2020-5-2<span class="bull">
-        ·</span>
-      <span id="busuanzi_value_page_pv"></span>次阅读</p>
-    </header>
+<div class="pattern-center ">
+  <div class="pattern-attachment-img">
+    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="ssm.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
   </div>
-
+  <header class="pattern-header ">
+    <h1 class="cat-title">ssm</h1>
+  </header>
+</div>
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div class="toc"></div>
-        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
-        
-        <div class="entry-content">
-          <h1 id="A-Phoenix-and-Balance"><a href="#A-Phoenix-and-Balance" class="headerlink" title="A. Phoenix and Balance"></a><a href="https://codeforces.com/contest/1348/problem/A" target="_blank" rel="noopener">A. Phoenix and Balance</a></h1><p>Phoenix has <strong>n</strong> coins with weights 2<sup>1</sup>, 2<sup>2</sup>, …, 2<sup>n</sup>. He knows that n is even.</p>
-<p>He wants to split the coins into two piles such that each pile has exactly n/2 coins and the difference of weights between the two piles is <strong>minimized</strong>. Formally, let a denote the sum of weights in the first pile, and b denote the sum of weights in the second pile. Help Phoenix minimize|a−b|, the absolute value of a−b.</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The input consists of multiple test cases. The first line contains an integer t (1 ≤ t ≤ 100) — the number of test cases.</p>
-<p>The first line of each test case contains an integer n (2 ≤ n ≤ 30; n is even) — the number of coins that Phoenix has.</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, output one integer — the minimum possible difference of weights between the two piles.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a><strong>Example</strong></h2><p><strong>input</strong></p>
-<pre><code>2
-2
-4
-</code></pre><p><strong>output</strong></p>
-<pre><code>2
-6
-</code></pre><h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>In the first test case, Phoenix has two coins with weights 2 and 4. No matter how he divides the coins, the difference will be 4−2=2.</p>
-<p>In the second test case, Phoenix has four coins of weight 2, 4, 8, and 16. It is optimal for Phoenix to place coins with weights 2 and 16 in one pile, and coins with weights 4 and 8 in another pile. The difference is (2+16)−(4+8)=6.</p>
-<h2 id="Problem-solving"><a href="#Problem-solving" class="headerlink" title="Problem solving"></a>Problem solving</h2><p>题意是说现在有 2<sup>1</sup>, 2<sup>2</sup>, …, 2<sup>n</sup> 这n个数字(n是偶数)，然后平均分成两堆，每堆n/2个数，求这两堆的差的绝对值最小是多少。</p>
-<p>思路：一个简单的构造，把最后一个和前n/2-1个分为一堆，剩下的为一堆，做差即为答案了。</p>
-<pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
-#define IOS()     std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)
-using namespace std;
-typedef long long ll;
-int a[35];
-inline void solve()
-{
-    ll n;
-    cin&gt;&gt;n;
-    ll c = 0,b=0;;
-    for(int i=1; i&lt;n/2; i++)
-        b += a[i];
-    b+=a[n];
-    for(int i=n/2; i&lt;n; i++)
-        c+=a[i];
-    cout&lt;&lt;abs(c-b)&lt;&lt;endl;
-
-}
-int main()
-{
-    IOS();
-    for(int i=1; i&lt;=30; i++) a[i]=pow(2,i);
-    int T;
-    cin&gt;&gt;T;
-    while(T--) solve();
-    return 0;
-}
-</code></pre>
-<h1 id="B-Phoenix-and-Beauty"><a href="#B-Phoenix-and-Beauty" class="headerlink" title="B. Phoenix and Beauty"></a><a href="https://codeforces.com/contest/1348/problem/B" target="_blank" rel="noopener">B. Phoenix and Beauty</a></h1><p>Phoenix loves beautiful arrays. An array is beautiful if all its subarrays of length k have the same sum. A subarray of an array is any sequence of consecutive elements.</p>
-<p>Phoenix currently has an array a of length n. He wants to insert some number of integers, possibly zero, into his array such that it becomes beautiful. The inserted integers must be between 1 and n inclusive. Integers may be inserted anywhere (even before the first or after the last element), and he is <strong>not trying</strong> to minimize the number of inserted integers.</p>
-<h2 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a><strong>Input</strong></h2><p>The input consists of multiple test cases. The first line contains an integer t (1 ≤ t ≤ 50) — the number of test cases.</p>
-<p>The first line of each test case contains two integers n and k (1 ≤ k ≤ n ≤ 100).</p>
-<p>The second line of each test case contains n space-separated integers (1 ≤ a<sub>i</sub> ≤ n) — the array that Phoenix currently has. This array may or may not be already beautiful.</p>
-<h2 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h2><p>For each test case, if it is impossible to create a beautiful array, print -1. Otherwise, print two lines.</p>
-<p>The first line should contain the length of the beautiful array m (n ≤ m ≤ 10<sup>4</sup>). You don’t need to minimize m.</p>
-<p>The second line should contain m space-separated integers (1 ≤ b<sub>i</sub> ≤ n) — a beautiful array that Phoenix can obtain after inserting some, possibly zero, integers into his array a. You may print integers that weren’t originally in array a.</p>
-<p>If there are multiple solutions, print any. It’s guaranteed that if we can make array a beautiful, we can always make it with resulting length no more than 10<sup>4</sup>.</p>
-<h2 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h2><p><strong>input</strong></p>
-<pre><code>4
-4 2
-1 2 2 1
-4 3
-1 2 2 1
-3 2
-1 2 3
-4 4
-4 3 4 2
-</code></pre><p><strong>output</strong></p>
-<pre><code>5
-1 2 1 2 1
-4
-1 2 2 1
--1
-7
-</code></pre><h2 id="Note-1"><a href="#Note-1" class="headerlink" title="Note"></a>Note</h2><p>In the first test case, we can make array aa beautiful by inserting the integer 1 at index 3 (in between the two existing 2s). Now, all subarrays of length k = 2 have the same sum 3. There exists many other possible solutions, for example:</p>
-<ul>
-<li>2,1,2,1,2,1</li>
-<li>1,2,1,2,1,2</li>
-</ul>
-<p>In the second test case, the array is already beautiful: all subarrays of length k=3 have the same sum 5.</p>
-<p>In the third test case, it can be shown that we cannot insert numbers to make array aa beautiful.</p>
-<p>In the fourth test case, the array bb shown is beautiful and all subarrays of length k = 4 have the same sum 10. There exist other solutions also.</p>
-<h2 id="Problem-solving-1"><a href="#Problem-solving-1" class="headerlink" title="Problem solving"></a>Problem solving</h2><p>B题是说给你n个数的一个序列和一个k，让你插入一些数，使得插入后的序列每个长度为k的区间的sum值相同。</p>
-<p>思路：先找出原序列中不同值的个数cnt。</p>
-<p>如果cnt&gt;k,就是-1，不可能构造出符合题意的序列。</p>
-<p>如果cnt&lt;k,就把序列中添加一些不同的数，使得cnt==k。</p>
-<p>如果cnt==k，就把这cnt个数依次循环输出 10000/k 次，如下：</p>
-<pre><code>8 3
-2 3 5 3 2 3 5 2
-</code></pre><pre><code>2 3 5 2 3 5 2 3 5 2 3 5 2 3 5 2 3 5 2 3 5 2 3 5 ...
-</code></pre><p>这样就可以满足所有长度为k的区间的值一定相同。</p>
-<pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
-#define IOS()     std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)
-using namespace std;
-typedef long long ll;
-const ll N = 1e5+7;
-int a[N];
-inline void solve()
-{
-    int n,k;
-    cin&gt;&gt;n&gt;&gt;k;
-    set&lt;int&gt; v;
-    for(int i=0; i&lt;n; i++)
-    {
-        cin&gt;&gt;a[i];
-        v.insert(a[i]);
-    }
-    if(v.size()&gt;k)
-    {
-        cout&lt;&lt;-1&lt;&lt;endl;
-        return;
-    }
-    if(v.size()&lt;k)
-    {
-        int p = 1;
-        while(v.size()&lt;k)
-            v.insert(p++);
-    }
-    cout&lt;&lt;10000/k*k&lt;&lt;endl;
-    for(int i=0; i&lt;10000/k; i++)
-        for(auto it:v)
-            cout&lt;&lt;it&lt;&lt;&quot; &quot;;
-    cout&lt;&lt;endl;
-    return;
-}
-int main()
-{
-    IOS();
-    int T;
-    cin&gt;&gt;T;
-    while(T--) solve();
-    return 0;
-}
-</code></pre>
-<h1 id="C-Phoenix-and-Distribution"><a href="#C-Phoenix-and-Distribution" class="headerlink" title="C. Phoenix and Distribution"></a><a href="https://codeforces.com/contest/1348/problem/C" target="_blank" rel="noopener">C. Phoenix and Distribution</a></h1><p>Phoenix has a string s consisting of lowercase Latin letters. He wants to distribute all the letters of his string into k <strong>non-empty</strong> strings a<sub>1</sub>,a<sub>2</sub>,…,a<sub>k</sub> such that every letter of s goes to exactly one of the strings a<sub>i</sub>. The strings a<sub>i</sub> <strong>do not</strong> need to be substrings of s. Phoenix can distribute letters of s and rearrange the letters within each string a<sub>i</sub> however he wants.</p>
-<p>For example, if s = baba and k = 2, Phoenix may distribute the letters of his string in many ways, such as:</p>
-<ul>
-<li>ba and ba</li>
-<li>a and abb</li>
-<li>ab and ab</li>
-<li>aa and bb</li>
-</ul>
-<p>But these ways are invalid:</p>
-<ul>
-<li>baa and ba</li>
-<li>b and ba</li>
-<li>baba and empty string (a<sub>i</sub> should be non-empty)</li>
-</ul>
-<p>Phoenix wants to distribute the letters of his string s into kk strings a<sub>1</sub>,a<sub>2</sub>,…,a<sub>k</sub> to <strong>minimize</strong> the lexicographically maximum string among them, i. e. minimize max(a<sub>1</sub>,a<sub>2</sub>,…,a<sub>k</sub>). Help him find the optimal distribution and print the minimal possible value of max(a<sub>1</sub>,a<sub>2</sub>,…,a<sub>k</sub>).</p>
-<p>String x is lexicographically less than string y if either x is a prefix of y and x≠y, or there exists an index i (1 ≤ i ≤ min(|x|,|y|)) such that x<sub>i</sub> &lt; y<sub>i</sub> and for every j (1≤j<i) x<sub>j&lt;/sub&gt; = y<sub>j</sub>. Here |x| denotes the length of the string x.</i)></p>
-<h2 id="Input-2"><a href="#Input-2" class="headerlink" title="Input"></a>Input</h2><p>The input consists of multiple test cases. The first line contains an integer t (1 ≤ t ≤ 1000) — the number of test cases. Each test case consists of two lines.</p>
-<p>The first line of each test case consists of two integers n and k (1 ≤ k ≤ n ≤ 10<sup>5</sup>) — the length of string s and the number of non-empty strings, into which Phoenix wants to distribute letters of s, respectively.</p>
-<p>The second line of each test case contains a string s of length n consisting only of lowercase Latin letters.</p>
-<p>It is guaranteed that the sum of n over all test cases is ≤ 10<sup>5</sup>.</p>
-<h2 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h2><p>Print t answers — one per test case. The ii-th answer should be the minimal possible value of max(a<sub>1</sub>,a<sub>2</sub>,…,a<sub>k</sub>) in the ii-th test case.</p>
-<h2 id="Example-2"><a href="#Example-2" class="headerlink" title="Example"></a>Example</h2><p><strong>input</strong></p>
-<pre><code>6
-4 2
-baba
-5 2
-baacb
-5 3
-baacb
-5 3
-aaaaa
-6 4
-aaxxzz
-7 1
-phoenix
-</code></pre><p><strong>output</strong></p>
-<pre><code>ab
-abbc
-b
-aa
-x
-ehinopx
-</code></pre><h2 id="Note-2"><a href="#Note-2" class="headerlink" title="Note"></a>Note</h2><p>In the first test case, one optimal solution is to distribute <code>baba</code> into <code>ab</code> and <code>ab</code>.</p>
-<p>In the second test case, one optimal solution is to distribute <code>baacb</code> into <code>abbc</code> and <code>a</code>.</p>
-<p>In the third test case, one optimal solution is to distribute <code>baacb</code> into <code>ac</code>, <code>ab</code>, and <code>b</code>.</p>
-<p>In the fourth test case, one optimal solution is to distribute <code>aaaaa</code> into <code>aa</code>, <code>aa</code>, and <code>a</code>.</p>
-<p>In the fifth test case, one optimal solution is to distribute <code>aaxxzz</code> into <code>az</code>, <code>az</code>, <code>x</code>, and <code>x</code>.</p>
-<p>In the sixth test case, one optimal solution is to distribute phoenix into <code>ehinopx</code>.</p>
-<h2 id="Problem-solving-2"><a href="#Problem-solving-2" class="headerlink" title="Problem solving"></a>Problem solving</h2><p>C题是给你一个字符串，然后用这个字符串中的字符组成k个字符串，然后输出这k个字符串的字典序最大字符串最小的可能情况是什么。</p>
-<p>这道题输入样例可以说是很良心了，基本上把所有的情况都列举出来了。</p>
-<p>首先不用说，要把这个字符串排序。我们设第k个字符串最大，k个字符串初始为空。</p>
-<p>然后从小到大依次分给k个字符串一个字符。</p>
-<p>接着就需要分情况讨论了：</p>
-<ul>
-<li>当第k个分到的字符和第一个不同时，只需要把剩下的所有字符串都分给第1个字符串，这样第k个就是最小的可能了，<strong>如第3组和第5组输入样例</strong>。</li>
-<li>当第k个分到的字符和第一个相同时，我们需要再判断一下第k个字符后面还有几个不同的字符。如果大于1个那么就把所有的剩余字符分给第k个字符串，<strong>如第2组输入样例</strong>；如果等于1个，那么就把剩余的字符平均分配给这k个字符串，<strong>如第1组和第4组输入样例</strong>。</li>
-<li>还有一种就是如果k=1那么就可以直接把原字符串排序输出就好了，<strong>如第6组输入样例</strong>。</li>
-</ul>
-<pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
-#define mem(a, b) memset(a, b, sizeof(a))
-#define IOS()     std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)
-using namespace std;
-inline void solve()
-{
-    int n,k;
-    string s;
-    set&lt;char&gt; v;
-    cin&gt;&gt;n&gt;&gt;k;
-    cin&gt;&gt;s;
-    sort(s.begin(),s.end());
-    if(k==1)
-    {
-        cout&lt;&lt;s&lt;&lt;endl;
-        return;
-    }
-    if(s[k-1]!=s[0])
-    {
-        cout&lt;&lt;s[k-1]&lt;&lt;endl;
-        return;
-    }
-    int flag=0;
-    for(int i=k; i&lt;n; i++)
-    {
-        v.insert(s[i]);
-        if(v.size()&gt;1)
-        {
-            flag=1;
-            break;
-        }
-    }
-    if(flag)
-    {
-        for(int i=k-1; i&lt;n; i++)
-            cout&lt;&lt;s[i];
-        cout&lt;&lt;endl;
-    }
-    else
-    {
-        cout&lt;&lt;s[k-1];
-        for(int i=k,j=1; j&lt;(n%k==0?n/k:n/k+1); i++,j++)
-            cout&lt;&lt;s[i];
-        cout&lt;&lt;endl;
-    }
-}
-int main()
-{
-    IOS();
-    int T;
-    cin&gt;&gt;T;
-    while(T--) solve();
-    return 0;
-}
-</code></pre>
-<p>D待补吧</p>
-
-        </div>
-        <!-- .entry-content -->
-        <div class="single-reward">
-          <div class="reward-open">赏
-            <div class="reward-main">
-              <ul class="reward-row">
-                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/donate/alipay.jpg"></li>
-                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/images/donate/wechatpay.jpg"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-        <footer class="post-footer">
-          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-          <div class="post-tags">
-          </div>
-          <div class="post-share">
-            <div class="social-share sharehidden share-component"></div>
-            <i class="iconfont show-share icon-forward"></i>
-          </div>
-        </footer><!-- .entry-footer -->
-      </article>
-      <!-- #post-## -->
-      <div class="toc" style="background: none;"></div>
-      <section class="post-squares nextprev">
-        
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2020/08/03/mybatis整合spring时出现异常的解决方法/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3451.GIF" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3451.GIF">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                mybatis整合spring时c3p0出现异常的解决方法</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-        
-          
-            <div class="post-nepre half next">
-          
-            <a href="/2020/04/09/Codeforces-Round-632-Div-2-C/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3449.GIF" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3449.GIF">
-              </div>
-              <span class="label">
-              Next Post</span>
-              <div class="info">
-                <h3>
-                Codeforces Round #632 (Div. 2) C</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-      </section>
       
-<div id="vcomments"></div>
-<script>
-  window.onload = function(){
-      var valine = new Valine();
-      valine.init({
-        el: '#vcomments',
-        appId: "UxYfusXUbSO4XIT105k8RsWo-gzGzoHsz",
-        appKey: "Qcqav1HXc6Afma8BAuuFY9LA",
-        path: window.location.pathname,
-        placeholder: "你是我一生只会遇见一次的惊喜 ..."
-      })
-  }
-</script>
-
-      <section class="author-profile">
-        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="https://www.shi747826.com" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.1/images/头像.jpg" itemprop="image" alt="SQRock" height="70" width="70"></a>
-          <div class="meta">
-            <span class="title">Author</span>
-            <h3 itemprop="name">
-            <a href="https://www.shi747826.com" itemprop="url" rel="author">SQRock</a>
-            </h3>
-          </div>
+  <!-- 首页默认取最最新文章集 -->
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2020/08/03/mybatis整合spring时出现异常的解决方法/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
         </div>
-        <hr>
-        <p><i class="iconfont icon-write"></i>积极废人</p>
-      </section>
-    </main><!-- #main -->
-  </div><!-- #primary -->
+        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/shi747826/cdn@1.2/img/imgIMG_3451.GIF" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2020/08/03/mybatis整合spring时出现异常的解决方法/">
+    mybatis整合spring时c3p0出现异常的解决方法</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2020-8-3</div>
+    <p>
+    一个小bug搞了我几个小时，病急乱投医</p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2020/08/03/mybatis整合spring时出现异常的解决方法/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+
+
+      <div class="clearer">
+      </div>
+    </main>
+    <!--  -->
+    
+  </div>
 </div>
-
-
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML"></script>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-  </script>
-
-
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
